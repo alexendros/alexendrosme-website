@@ -21,4 +21,4 @@ pnpm build   # genera out/
 
 Separado del monorepo `alexendros-monorepo` el **2026-04-11** en el commit `a180d73`. La historia granular anterior vive en ese repositorio; este arranca como repo limpio.
 
-Ver `CLAUDE.md` para reglas del proyecto y `docs/history/phase-03-alexendros-me/` para el contexto de la Fase 3 (layout, contenido, SEO).
+Ver `CLAUDE.md` para reglas del proyecto y `docs/CHANGELOG.md` para el historial sintetizado de hitos.

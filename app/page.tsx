@@ -27,7 +27,7 @@ export default function Home() {
               href="https://alexendros.pro"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline"
+              className="text-primary underline underline-offset-4 decoration-primary/60 hover:decoration-primary"
             >
               KitOS
             </a>
@@ -71,7 +71,7 @@ export default function Home() {
                 href="https://alexendros.pro"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
+                className="text-primary underline underline-offset-4 decoration-primary/60 hover:decoration-primary"
               >
                 alexendros.pro
               </a>

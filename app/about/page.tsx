@@ -43,7 +43,7 @@ export default function AboutPage() {
           Fundador en activo de KitOS (
           <a
             href="https://alexendros.pro"
-            className="text-primary hover:underline"
+            className="text-primary underline underline-offset-4 decoration-primary/60 hover:decoration-primary"
             target="_blank"
             rel="noopener noreferrer"
           >

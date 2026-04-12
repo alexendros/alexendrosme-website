@@ -43,6 +43,9 @@ package_manager: pnpm@10+
 - **NO** API routes, **NO** middleware, **NO** backend de ningun tipo.
 - Commits: nunca a `main` directo. Feature branch + PR.
 
+### Seguridad (riesgos aceptados)
+- CSP en `vercel.json` usa `'unsafe-inline'` para `script-src` y `style-src`. Motivo: Next.js requiere inline scripts para hydration y JSON-LD (`dangerouslySetInnerHTML` en `layout.tsx`), y Tailwind CSS v4 genera estilos inline. Riesgo mitigado por la ausencia de input de usuario y backend.
+
 ### UI
 - Componentes shadcn viven en `components/ui/` (inline — antes `@repo/ui`).
 - Helper `cn()` en `lib/utils.ts`.

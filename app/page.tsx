@@ -29,7 +29,7 @@ export default function Home() {
             >
               KitOS
             </a>
-            . Background en derecho. Madrid.
+            . Background en derecho. Valencia.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild>

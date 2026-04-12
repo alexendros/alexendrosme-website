@@ -26,12 +26,12 @@ export default function AvisoLegalPage() {
           <strong className="text-foreground">NIF:</strong> 21002968N
         </li>
         <li>
-          <strong className="text-foreground">Domicilio:</strong> Madrid, España
+          <strong className="text-foreground">Domicilio:</strong> Valencia, España
           (dirección completa disponible a efectos legales previa solicitud)
         </li>
         <li>
           <strong className="text-foreground">Email de contacto:</strong>{" "}
-          <a href="mailto:contacto@alexendros.me">contacto@alexendros.me</a>
+          <a href="mailto:hola@alexendros.me">hola@alexendros.me</a>
         </li>
         <li>
           <strong className="text-foreground">Actividad:</strong> Desarrollo de

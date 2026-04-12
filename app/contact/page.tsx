@@ -31,16 +31,14 @@ export default function ContactPage() {
       <div className="space-y-3">
         <h1 className="text-3xl font-bold text-foreground">Contacto</h1>
         <p className="text-muted-foreground leading-relaxed">
-          Disponible para consultoría técnica en proyectos donde la intersección
-          tech + legal aporta valor real.
+          Disponible para consultoría técnica en proyectos donde la intersección tech + legal aporta
+          valor real.
         </p>
       </div>
 
       {/* Email */}
       <section className="space-y-4">
-        <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider">
-          Email
-        </h2>
+        <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider">Email</h2>
         <Button asChild>
           <a href="mailto:hola@alexendros.me">hola@alexendros.me</a>
         </Button>
@@ -50,15 +48,11 @@ export default function ContactPage() {
 
       {/* Social links */}
       <section className="space-y-4">
-        <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider">
-          Redes
-        </h2>
+        <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider">Redes</h2>
         <ul className="space-y-3">
           {socials.map((social) => (
             <li key={social.label} className="flex items-center gap-3">
-              <span className="text-sm text-muted-foreground w-24">
-                {social.label}
-              </span>
+              <span className="text-sm text-muted-foreground w-24">{social.label}</span>
               <a
                 href={social.href}
                 target="_blank"

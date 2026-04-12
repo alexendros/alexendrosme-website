@@ -25,28 +25,31 @@ package_manager: pnpm@10+
 
 ## 3. STACK
 
-| Capa | Tecnologia |
-|------|------------|
-| Framework | Next.js 15 App Router · TypeScript strict |
-| UI | Tailwind CSS v4 CSS-first · shadcn/ui (inline en `components/ui/`) |
-| Tokens | oklch dark-first (inline en `app/globals.css`) |
-| Fonts | Geist Sans + Mono (locales en `public/fonts/`) |
-| Headers | Security headers via `vercel.json` (CSP strict, HSTS preload, X-Frame-Options DENY) |
-| Build | `next build` con static export a `out/` |
-| Deploy | Vercel (region mad1) — pendiente |
+| Capa      | Tecnologia                                                                          |
+| --------- | ----------------------------------------------------------------------------------- |
+| Framework | Next.js 15 App Router · TypeScript strict                                           |
+| UI        | Tailwind CSS v4 CSS-first · shadcn/ui (inline en `components/ui/`)                  |
+| Tokens    | oklch dark-first (inline en `app/globals.css`)                                      |
+| Fonts     | Geist Sans + Mono (locales en `public/fonts/`)                                      |
+| Headers   | Security headers via `vercel.json` (CSP strict, HSTS preload, X-Frame-Options DENY) |
+| Build     | `next build` con static export a `out/`                                             |
+| Deploy    | Vercel (region mad1) — pendiente                                                    |
 
 ## 4. REGLAS ABSOLUTAS
 
 ### Codigo
+
 - TypeScript `strict: true`. **Prohibido `any`.**
 - Server Components por defecto. `"use client"` solo para interactividad browser.
 - **NO** API routes, **NO** middleware, **NO** backend de ningun tipo.
 - Commits: nunca a `main` directo. Feature branch + PR.
 
 ### Seguridad (riesgos aceptados)
+
 - CSP en `vercel.json` usa `'unsafe-inline'` para `script-src` y `style-src`. Motivo: Next.js requiere inline scripts para hydration y JSON-LD (`dangerouslySetInnerHTML` en `layout.tsx`), y Tailwind CSS v4 genera estilos inline. Riesgo mitigado por la ausencia de input de usuario y backend.
 
 ### UI
+
 - Componentes shadcn viven en `components/ui/` (inline — antes `@repo/ui`).
 - Helper `cn()` en `lib/utils.ts`.
 - Iconos: `lucide-react` unicamente.
@@ -54,6 +57,7 @@ package_manager: pnpm@10+
 - Colores SOLO via CSS vars definidas en `app/globals.css`. No hardcodear oklch en componentes.
 
 ### SEO & Rendimiento
+
 - JSON-LD Person + WebSite en `lib/structured-data.ts` consumido desde `app/layout.tsx`.
 - Sitemap estatico en `public/sitemap.xml`, robots en `public/robots.txt`.
 - OG image en `public/og/opengraph-image.png`.
@@ -61,6 +65,7 @@ package_manager: pnpm@10+
 - Test de 5 segundos: quien es, que construye, para quien — visible sin scroll.
 
 ### Legal
+
 - RGPD EU 2016/679, LOPDGDD LO 3/2018, LSSI-CE Art. 10, AEPD Guia Cookies 2023.
 - Paginas legales reales en `app/legal/` (aviso-legal, privacidad, cookies).
 - **NO activar analytics** (PostHog, GA, etc.) sin consentimiento previo — ahora mismo la app no lleva tracking.

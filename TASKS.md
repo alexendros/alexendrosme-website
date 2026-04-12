@@ -4,46 +4,28 @@ Lista viva de pendientes del repositorio standalone `alexendros-me`.
 
 ---
 
-## 1. Infraestructura git
+## 1. Infraestructura git ✅ (2026-04-12)
 
-- [ ] Crear repo en GitHub: `github.com/alexendros/alexendrosme-website`.
-  - Privado al principio, sin README autogenerado (ya existe uno).
-- [ ] Añadir remote y primer push de `main`:
-  ```bash
-  cd ~/Apps/alexendros-me
-  git remote add origin git@github.com:alexendros/alexendrosme-website.git
-  git push -u origin main
-  ```
-- [ ] Push de la rama `audit/cleanup-20260412` y abrir PR contra `main`.
+- [x] Repo creado: `github.com/alexendros/alexendrosme-website`.
+- [x] `main` pusheado, PR de audit mergeado.
 - [ ] Proteger `main` en GitHub (require PR + 1 review).
 
-## 2. Deploy Vercel
+## 2. Deploy Vercel ✅ (2026-04-12)
 
-- [ ] Importar repo desde Vercel dashboard.
-- [ ] Framework preset: **Next.js**.
-- [ ] Root directory: `./`.
-- [ ] Build command: `pnpm build`.
-- [ ] Output directory: `out`.
-- [ ] Region: **mad1**.
-- [ ] Variables de entorno: ninguna.
-- [ ] Verificar que `vercel.json` aplica los security headers.
-- [ ] Validar deploy preview en `*.vercel.app`:
-  - [ ] Home carga con fonts Geist locales (sin FOUT).
-  - [ ] Navegación mobile (Sheet) funciona.
-  - [ ] 8 páginas públicas resuelven (/, /about, /projects, /uses, /contact, /legal/aviso-legal, /legal/privacidad, /legal/cookies).
-  - [ ] `/404` custom renderiza correctamente.
-  - [ ] JSON-LD visible en `view-source`.
-  - [ ] `robots.txt` y `sitemap.xml` accesibles.
+- [x] Proyecto `alexendrosme-website` importado (team `alexendros`).
+- [x] Next.js preset, `pnpm build`, **Output Directory vacío** (Vercel detecta `output: "export"`).
+- [x] Sin variables de entorno.
+- [x] Build verde, 11 páginas, first deploy OK.
 
-## 3. DNS alexendros.me
+## 3. DNS alexendros.me ✅ (2026-04-12)
 
-- [ ] Añadir dominio `alexendros.me` al proyecto Vercel.
-- [ ] Configurar registros en el registrar:
-  - A record apex → `76.76.21.21`, o
-  - CNAME → `cname.vercel-dns.com` si el registrar soporta ALIAS/ANAME en apex.
-- [ ] Redirect 301 `www.alexendros.me` → apex.
-- [ ] Esperar propagación + cert SSL automático.
-- [ ] `curl -I https://alexendros.me` y verificar HSTS, CSP, X-Frame-Options.
+- [x] Dominio custom añadido en Vercel (apex primary, www 308 → apex).
+- [x] DNS Hostinger:
+  - `@` A → `216.198.79.1`
+  - `www` CNAME → `40de9f12f17c018a.vercel-dns-017.com.`
+- [x] SSL automático activo, HSTS preload live.
+- [x] Validado: HTTP/2 200, CSP + HSTS + X-Frame-Options DENY + Permissions-Policy + Referrer-Policy.
+- [x] `/sitemap.xml` y `/robots.txt` sirviendo 200.
 
 ## 4. Post-deploy — validaciones
 
@@ -53,8 +35,8 @@ Lista viva de pendientes del repositorio standalone `alexendros-me`.
   - [ ] Best practices = 100
   - [ ] SEO = 100
 - [ ] **CWV reales**: `npx @unlighthouse/cli https://alexendros.me`, LCP < 2.5s mobile.
-- [ ] **SEO**: `curl https://alexendros.me/sitemap.xml` y `/robots.txt`.
-- [ ] **JSON-LD**: validar en https://validator.schema.org con `view-source` de la home.
+- [x] **SEO**: `curl https://alexendros.me/sitemap.xml` y `/robots.txt` → HTTP/2 200 (2026-04-12).
+- [x] **JSON-LD**: Person + WebSite servidos en la home, schema válido (2026-04-12). Pendiente validar vía https://validator.schema.org UI.
 - [ ] **OG image**: previsualizar en https://metatags.io.
 - [ ] Enviar sitemap a Google Search Console + IndexNow.
 
@@ -68,11 +50,11 @@ Lista viva de pendientes del repositorio standalone `alexendros-me`.
 - [ ] Microanimaciones en hero con `tw-animate-css` (ya instalado).
 - [ ] Calendly embed en `/contact` (iframe, compatible con static export).
 
-## 6. Higiene del repo
+## 6. Higiene del repo ✅ (2026-04-12)
 
-- [ ] GitHub Actions CI: `pnpm install --frozen-lockfile && pnpm typecheck && pnpm build`.
-- [ ] `.github/pull_request_template.md`.
-- [ ] Dependabot para actualizaciones de seguridad.
+- [x] GitHub Actions CI: typecheck + lint + build en PRs y push a main (`.github/workflows/ci.yml`).
+- [x] `.github/pull_request_template.md`.
+- [x] Dependabot npm (weekly, grouped minor/patch) + github-actions (monthly).
 
 ## 7. Audit 2026-04-12 (completado)
 
@@ -86,4 +68,4 @@ Lista viva de pendientes del repositorio standalone `alexendros-me`.
 
 ---
 
-_Última actualización: 2026-04-12 (tras audit/cleanup)._
+_Última actualización: 2026-04-12 (higiene repo + validaciones post-deploy)._

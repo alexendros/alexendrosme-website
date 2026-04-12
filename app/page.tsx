@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,6 +10,13 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { siteConfig } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Inicio",
+  description: siteConfig.description,
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (

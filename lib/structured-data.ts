@@ -12,7 +12,7 @@ export const personJsonLd = {
   knowsAbout: ["Next.js", "TypeScript", "Supabase", "Stripe", "RGPD"],
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Madrid",
+    addressLocality: "Valencia",
     addressCountry: "ES",
   },
   sameAs: [

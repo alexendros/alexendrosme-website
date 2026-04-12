@@ -29,7 +29,7 @@ export default function PrivacidadPage() {
           <strong className="text-foreground">NIF:</strong> 21002968N
         </li>
         <li>
-          <strong className="text-foreground">Domicilio:</strong> Madrid, España
+          <strong className="text-foreground">Domicilio:</strong> Valencia, España
         </li>
         <li>
           <strong className="text-foreground">Email de contacto:</strong>{" "}
@@ -45,108 +45,67 @@ export default function PrivacidadPage() {
       </p>
 
       <h2>3. Finalidades y bases legales del tratamiento</h2>
+      <p>
+        Este sitio web es estático y no recoge datos personales de forma
+        automatizada. Las únicas finalidades de tratamiento son:
+      </p>
       <ul>
         <li>
           <strong className="text-foreground">
-            Gestión de cuenta y prestación del servicio
+            Prestación del servicio web (hosting)
           </strong>{" "}
-          — Base legal: Art. 6.1.b RGPD (ejecución de un contrato).
+          — El proveedor de hosting (Vercel) puede procesar datos técnicos de
+          conexión (dirección IP, agente de usuario) como parte de la entrega
+          del contenido. Base legal: Art. 6.1.b RGPD (prestación del servicio).
         </li>
         <li>
           <strong className="text-foreground">
-            Envío de comunicaciones comerciales
+            Contacto voluntario por email
           </strong>{" "}
-          — Base legal: Art. 6.1.a RGPD (consentimiento explícito del
-          interesado).
-        </li>
-        <li>
-          <strong className="text-foreground">
-            Facturación y cumplimiento fiscal
-          </strong>{" "}
-          — Base legal: Art. 6.1.c RGPD (obligación legal).
-        </li>
-        <li>
-          <strong className="text-foreground">
-            Seguridad y prevención de fraude
-          </strong>{" "}
-          — Base legal: Art. 6.1.f RGPD (interés legítimo del responsable).
+          — Si el usuario contacta a través de{" "}
+          <a href="mailto:hola@alexendros.me">hola@alexendros.me</a>, los datos
+          proporcionados se tratarán exclusivamente para responder a la
+          consulta. Base legal: Art. 6.1.b RGPD (medidas precontractuales a
+          petición del interesado).
         </li>
       </ul>
 
       <h2>4. Destinatarios de los datos</h2>
       <p>
-        Los datos podrán ser comunicados a los siguientes encargados del
-        tratamiento, en virtud de la prestación de sus servicios:
+        Los datos técnicos de conexión son procesados por el siguiente
+        proveedor:
       </p>
       <ul>
         <li>
-          <strong className="text-foreground">Stripe, Inc.</strong> — Gestión de
-          pagos y prevención de fraude.
-        </li>
-        <li>
-          <strong className="text-foreground">Supabase, Inc.</strong> — Base de
-          datos y autenticación (región EU West).
-        </li>
-        <li>
-          <strong className="text-foreground">Resend, Inc.</strong> — Envío de
-          correos electrónicos transaccionales.
-        </li>
-        <li>
           <strong className="text-foreground">Vercel, Inc.</strong> — Hosting y
-          entrega de contenido web (CDN).
+          entrega de contenido web (CDN). Los datos se procesan conforme a su
+          política de privacidad y acuerdo de procesamiento de datos (DPA).
         </li>
       </ul>
+      <p>
+        No se comunican datos a ningún otro tercero. No se ceden datos con
+        fines comerciales o publicitarios.
+      </p>
 
       <h2>5. Transferencias internacionales de datos</h2>
       <p>
-        Algunos de los proveedores anteriores tienen su sede en Estados Unidos.
-        Las transferencias se realizan con las garantías adecuadas previstas en
-        el Art. 46 RGPD, mediante Cláusulas Contractuales Tipo (CCT) adoptadas
-        por la Comisión Europea. En particular:
+        Vercel, Inc. tiene su sede en Estados Unidos. Las transferencias se
+        realizan con las garantías adecuadas previstas en el Art. 46 RGPD,
+        mediante Cláusulas Contractuales Tipo (CCT/SCCs) adoptadas por la
+        Comisión Europea, conforme al Art. 46.2.c RGPD.
       </p>
-      <ul>
-        <li>
-          <strong className="text-foreground">Stripe:</strong> SCCs firmadas
-          conforme al Art. 46.2.c RGPD.
-        </li>
-        <li>
-          <strong className="text-foreground">Vercel:</strong> SCCs firmadas
-          conforme al Art. 46.2.c RGPD, con opción de región EU disponible.
-        </li>
-        <li>
-          <strong className="text-foreground">Supabase:</strong> DPA disponible,
-          procesamiento en región EU West (Frankfurt).
-        </li>
-        <li>
-          <strong className="text-foreground">Resend:</strong> DPA disponible
-          para tratamiento de email transaccional.
-        </li>
-      </ul>
 
       <h2>6. Plazos de conservación</h2>
-      <ul>
-        <li>
-          <strong className="text-foreground">Usuarios inactivos:</strong> 3
-          años desde el último acceso (Art. 5.1.e RGPD — principio de
-          limitación del plazo de conservación).
-        </li>
-        <li>
-          <strong className="text-foreground">Datos fiscales:</strong> 5 años
-          (Art. 30 LGT y Art. 30 Código de Comercio).
-        </li>
-        <li>
-          <strong className="text-foreground">Logs de acceso:</strong> Máximo 1
-          año (Art. 12 LSSI-CE).
-        </li>
-        <li>
-          <strong className="text-foreground">Datos post-baja:</strong> 90 días
-          antes de la anonimización definitiva.
-        </li>
-        <li>
-          <strong className="text-foreground">Audit logs:</strong> 5 años
-          (trazabilidad fiscal y legal).
-        </li>
-      </ul>
+      <p>
+        Este sitio web no almacena datos personales de los visitantes. Los datos
+        técnicos de conexión procesados por Vercel se rigen por su propia
+        política de retención.
+      </p>
+      <p>
+        En caso de contacto por email, los datos se conservarán durante el
+        tiempo necesario para atender la consulta y, en su caso, durante los
+        plazos legales aplicables.
+      </p>
 
       <h2>7. Derechos de los interesados</h2>
       <p>
@@ -201,7 +160,11 @@ export default function PrivacidadPage() {
       </p>
 
       <p>
-        <em>Última actualización: abril 2026</em>
+        <em>
+          Última actualización: abril 2026. Esta política se actualizará si se
+          incorporan funcionalidades que impliquen tratamiento de datos
+          personales adicional.
+        </em>
       </p>
     </>
   );

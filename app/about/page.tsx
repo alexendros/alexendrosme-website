@@ -4,7 +4,7 @@ import { Separator } from "@/components/ui/separator";
 export const metadata: Metadata = {
   title: "Sobre mí",
   description:
-    "Fullstack developer con background jurídico. Fundador de KitOS. Madrid.",
+    "Fullstack developer con background jurídico. Fundador de KitOS. Valencia.",
 };
 
 export default function AboutPage() {

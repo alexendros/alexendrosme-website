@@ -79,7 +79,7 @@ export default function ContactPage() {
         <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider">
           Ubicación
         </h2>
-        <p className="text-sm text-muted-foreground">Madrid, España</p>
+        <p className="text-sm text-muted-foreground">Valencia, España</p>
       </section>
     </div>
   );

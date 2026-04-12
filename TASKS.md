@@ -6,12 +6,12 @@ Lista viva de pendientes del repositorio standalone `alexendros-me`.
 
 ## 1. Infraestructura git
 
-- [ ] Crear repo en GitHub: `github.com/alexendros/alexendros-me`.
+- [ ] Crear repo en GitHub: `github.com/alexendros/alexendrosme-website`.
   - Privado al principio, sin README autogenerado (ya existe uno).
 - [ ] Añadir remote y primer push de `main`:
   ```bash
   cd ~/Apps/alexendros-me
-  git remote add origin git@github.com:alexendros/alexendros-me.git
+  git remote add origin git@github.com:alexendros/alexendrosme-website.git
   git push -u origin main
   ```
 - [ ] Push de la rama `audit/cleanup-20260412` y abrir PR contra `main`.

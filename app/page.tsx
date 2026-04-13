@@ -154,7 +154,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-3xl px-6">
             <h2 className="text-2xl font-bold mb-2">Stack</h2>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-muted-foreground mb-10 md:mb-14">
               Las piezas con las que construyo. Ver el detalle y el porqué en{" "}
               <Link
                 href="/herramientas"

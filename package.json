@@ -35,7 +35,7 @@
     "@types/react-dom": "^19.1.0",
     "depcheck": "^1.4.7",
     "eslint": "^9.27.0",
-    "eslint-config-next": "^15.3.0",
+    "eslint-config-next": "^16.2.3",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.8.2",
     "ts-prune": "^0.10.3",

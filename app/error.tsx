@@ -16,8 +16,8 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16 md:py-24 text-center">
-      <h1 className="text-4xl font-bold text-foreground">Algo ha ido mal</h1>
+    <div className="site-shell max-w-3xl section text-center">
+      <h1 className="headline">Algo ha ido mal</h1>
       <p className="mt-4 text-muted-foreground">
         Se ha producido un error inesperado. Puedes reintentarlo o volver al inicio.
       </p>

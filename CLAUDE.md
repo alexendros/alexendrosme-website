@@ -1,6 +1,6 @@
 # CLAUDE.md — alexendros-me (standalone)
 
-Landing page profesional de marca personal en **alexendros.me**.
+Landing profesional de marca personal en **alexendros.me**. Repositorio público con vocación promocional: quien llegue aquí debe ver el criterio detrás del código, no solo el código.
 
 ---
 
@@ -34,6 +34,8 @@ package_manager: pnpm@10+
 | Headers   | Security headers via `vercel.json` (CSP strict, HSTS preload, X-Frame-Options DENY) |
 | Build     | `next build` con static export a `out/`                                             |
 | Deploy    | Vercel (region mad1) — pendiente                                                    |
+| Calidad   | ESLint flat + Prettier 3 + depcheck + ts-prune · TS `noUncheckedIndexedAccess`      |
+| Pair dev  | [Claude Code](https://claude.com/claude-code) — asistente CLI / VS Code del autor   |
 
 ## 4. REGLAS ABSOLUTAS
 
@@ -43,6 +45,7 @@ package_manager: pnpm@10+
 - Server Components por defecto. `"use client"` solo para interactividad browser.
 - **NO** API routes, **NO** middleware, **NO** backend de ningun tipo.
 - Commits: nunca a `main` directo. Feature branch + PR.
+- Repo publico: **nunca** introducir secrets, tokens, `.env*` ni rutas a sistemas internos. El unico dato personal presente es el NIF en `/legal/aviso-legal` (exigido por LSSI-CE Art. 10) y el email publico `hola@alexendros.me`.
 
 ### Seguridad (riesgos aceptados)
 
@@ -69,6 +72,12 @@ package_manager: pnpm@10+
 - RGPD EU 2016/679, LOPDGDD LO 3/2018, LSSI-CE Art. 10, AEPD Guia Cookies 2023.
 - Paginas legales reales en `app/legal/` (aviso-legal, privacidad, cookies).
 - **NO activar analytics** (PostHog, GA, etc.) sin consentimiento previo — ahora mismo la app no lleva tracking.
+
+### Tono y comunicacion (repo publico)
+
+- README y docs publicas: tono promocional pero honesto. Mostrar decisiones, no vender. Evitar jerga vacia.
+- Al redactar copy en componentes o paginas, optimizar el **test de 5 segundos**: quien es, que construye, para quien.
+- No mencionar clientes, proyectos privados ni nombres internos del ecosistema `alexendros.pro` en archivos versionados.
 
 ## 5. ESTRUCTURA
 
@@ -136,6 +145,8 @@ pnpm lint
 [x] Ignorar errores TypeScript con @ts-ignore o as any
 [x] Commits directos a main
 [x] Anadir formularios que envien datos a un servidor (usar mailto/Calendly)
+[x] Comitear `.env*`, `.claude/settings.local.json`, tokens o API keys — repo es publico
+[x] Referenciar proyectos/clientes privados o paths internos del ecosistema `alexendros.pro`
 ```
 
 ## 8. ESTADO

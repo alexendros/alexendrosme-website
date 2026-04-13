@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12 md:py-16 space-y-12">
+    <div className="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16 space-y-12">
       <h1 className="text-3xl font-bold text-foreground">Sobre mí</h1>
 
       {/* Acto I */}
@@ -66,8 +66,9 @@ export default function AboutPage() {
         </blockquote>
 
         {/* Diferenciación table */}
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm border-collapse">
+        <div className="relative">
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse min-w-[360px]">
             <thead>
               <tr className="border-b border-border">
                 <th className="text-left py-3 pr-4 font-medium text-foreground">Dimensión</th>
@@ -111,6 +112,11 @@ export default function AboutPage() {
               </tr>
             </tbody>
           </table>
+          </div>
+          <div
+            aria-hidden
+            className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-background to-transparent sm:hidden"
+          />
         </div>
       </section>
     </div>

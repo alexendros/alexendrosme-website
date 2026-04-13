@@ -19,6 +19,9 @@ dist
 .vscode
 .idea
 
+# claude code local config (settings.local.json contiene permisos por máquina)
+.claude/
+
 # logs
 npm-debug.log*
 pnpm-debug.log*

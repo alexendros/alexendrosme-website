@@ -13,7 +13,7 @@ export default function UsesRedirectPage() {
   return (
     <>
       <UsesRedirect />
-      <div className="mx-auto max-w-3xl px-6 py-16 space-y-4">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16 space-y-4">
         <h1 className="text-2xl font-bold">Esta página se mudó</h1>
         <p className="text-muted-foreground">
           Ahora está en{" "}

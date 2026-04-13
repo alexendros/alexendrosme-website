@@ -33,7 +33,7 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12 md:py-16 space-y-8">
+    <div className="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16 space-y-8">
       <h1 className="text-3xl font-bold text-foreground">Proyectos</h1>
       <p className="text-muted-foreground leading-relaxed">
         Portfolio de proyectos activos. Cada uno incluye stack específico, estado actual y enlace a
@@ -44,12 +44,14 @@ export default function ProjectsPage() {
         {projects.map((project) => (
           <Card key={project.title} className="border-border">
             <CardHeader className="space-y-3">
-              <div className="flex items-start justify-between gap-4">
-                <div>
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div className="min-w-0">
                   <CardTitle className="text-foreground text-xl">{project.title}</CardTitle>
-                  <p className="text-xs text-muted-foreground mt-1">{project.year}</p>
+                  <p className="text-sm text-muted-foreground mt-1">{project.year}</p>
                 </div>
-                <Badge variant={project.statusVariant}>{project.status}</Badge>
+                <Badge variant={project.statusVariant} className="shrink-0">
+                  {project.status}
+                </Badge>
               </div>
               <CardDescription className="text-muted-foreground leading-relaxed">
                 {project.description}

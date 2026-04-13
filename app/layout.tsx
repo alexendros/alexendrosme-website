@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { ParticleBg } from "@/components/particle-bg";
@@ -48,6 +48,13 @@ export const metadata: Metadata = {
     images: ["/og/opengraph-image.png"],
   },
   robots: { index: true, follow: true },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0a0a0a",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

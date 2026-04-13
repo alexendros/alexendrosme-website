@@ -51,11 +51,10 @@ export default function Home() {
           <h2 className="headline mb-4">Sobre mí</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              Dev fullstack y fundador de{" "}
-              <strong className="text-foreground">KitOS</strong>, una plataforma SaaS de kits
-              digitales pensados sector a sector. Lo construyo con Next.js, Supabase y Stripe,
-              apretando donde se nota: rendimiento real (LCP &lt; 2s), conversión y cumplimiento
-              legal (RGPD/LOPDGDD) sin letra pequeña.
+              Dev fullstack y fundador de <strong className="text-foreground">KitOS</strong>, una
+              plataforma SaaS de kits digitales pensados sector a sector. Lo construyo con Next.js,
+              Supabase y Stripe, apretando donde se nota: rendimiento real (LCP &lt; 2s), conversión
+              y cumplimiento legal (RGPD/LOPDGDD) sin letra pequeña.
             </p>
             <p>
               Llegué al software por una ruta poco ortodoxa —la contaré con calma en{" "}

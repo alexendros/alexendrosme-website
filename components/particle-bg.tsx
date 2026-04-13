@@ -71,9 +71,7 @@ export function ParticleBg() {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         const color = p.hue === 0 ? primary : accent;
-        ctx.fillStyle = color.startsWith("oklch")
-          ? color.replace(/\)$/, ` / ${p.a})`)
-          : color;
+        ctx.fillStyle = color.startsWith("oklch") ? color.replace(/\)$/, ` / ${p.a})`) : color;
         ctx.globalAlpha = color.startsWith("oklch") ? 1 : p.a;
         ctx.fill();
         ctx.globalAlpha = 1;
@@ -92,10 +90,6 @@ export function ParticleBg() {
   }, []);
 
   return (
-    <canvas
-      ref={ref}
-      aria-hidden="true"
-      className="pointer-events-none fixed inset-0 -z-10"
-    />
+    <canvas ref={ref} aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10" />
   );
 }

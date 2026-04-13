@@ -17,7 +17,8 @@ type Section = {
 const stack: Section[] = [
   {
     category: "Framework & Runtime",
-    description: "La base sobre la que corre todo el producto: rendering, tipos y tiempo de ejecución.",
+    description:
+      "La base sobre la que corre todo el producto: rendering, tipos y tiempo de ejecución.",
     rationale:
       "Next.js por App Router, static export y la mejor historia de rendimiento en Vercel. TypeScript en strict para que el compilador haga de primer revisor. React 19 por server components; Node 22 por LTS y soporte nativo de fetch y test runner.",
     items: ["Next.js 15", "TypeScript strict", "React 19", "Node.js 22"],
@@ -31,7 +32,8 @@ const stack: Section[] = [
   },
   {
     category: "Base de datos & Auth",
-    description: "Persistencia, autenticación y almacenamiento sin montar infraestructura manualmente.",
+    description:
+      "Persistencia, autenticación y almacenamiento sin montar infraestructura manualmente.",
     rationale:
       "Supabase cubre Postgres, Auth y Storage con RLS real desde el minuto uno. Prisma aporta tipos end-to-end y migraciones verificables en CI — más fiable que escribir SQL a mano para CRUD de producto.",
     items: ["Supabase (PostgreSQL + Auth + Storage)", "Prisma 5"],

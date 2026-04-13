@@ -14,11 +14,11 @@ export function Nav() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-sm">
-      <nav className="mx-auto flex h-16 max-w-3xl items-center justify-between px-6">
+      <nav className="mx-auto flex h-14 md:h-16 max-w-3xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <Link
           href="/"
-          className="font-mono text-lg font-bold text-primary hover:opacity-80 transition-opacity"
+          className="inline-flex min-h-[44px] items-center font-mono text-lg font-bold text-primary hover:opacity-80 transition-opacity"
         >
           Alexendros
         </Link>
@@ -44,11 +44,16 @@ export function Nav() {
         {/* Mobile hamburger */}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="md:hidden" aria-label="Abrir menú">
+            <Button
+              variant="ghost"
+              size="icon-touch"
+              className="md:hidden"
+              aria-label="Abrir menú"
+            >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-64">
+          <SheetContent side="right" className="w-[min(18rem,85vw)] sm:w-64">
             <div className="mt-8">
               <Link
                 href="/"
@@ -63,7 +68,7 @@ export function Nav() {
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                      className={`flex min-h-[44px] items-center px-3 py-3 rounded-md text-sm font-medium transition-colors ${
                         pathname === item.href
                           ? "bg-secondary text-foreground"
                           : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"

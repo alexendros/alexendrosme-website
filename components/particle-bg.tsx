@@ -28,7 +28,6 @@ export function ParticleBg() {
     const primary = styles.getPropertyValue("--primary").trim() || "oklch(0.72 0.22 142)";
     const accent = styles.getPropertyValue("--accent").trim() || "oklch(0.65 0.18 55)";
 
-    const density = 0.00008;
     let particles: Particle[] = [];
     let raf = 0;
 
@@ -41,7 +40,10 @@ export function ParticleBg() {
       canvas.style.height = `${h}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      const count = Math.max(40, Math.min(120, Math.floor(w * h * density)));
+      const density = w < 640 ? 0.00004 : 0.00008;
+      const minCount = w < 640 ? 20 : 40;
+      const maxCount = w < 640 ? 60 : 120;
+      const count = Math.max(minCount, Math.min(maxCount, Math.floor(w * h * density)));
       particles = Array.from({ length: count }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,

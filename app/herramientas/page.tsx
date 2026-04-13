@@ -90,7 +90,7 @@ const stack: Section[] = [
 
 export default function HerramientasPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12 md:py-16 space-y-10">
+    <div className="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16 space-y-10">
       <div className="space-y-3">
         <h1 className="text-3xl font-bold text-foreground">Herramientas</h1>
         <p className="text-muted-foreground leading-relaxed">
@@ -114,7 +114,11 @@ export default function HerramientasPage() {
               </p>
               <div className="flex flex-wrap gap-2 pt-1">
                 {section.items.map((item) => (
-                  <Badge key={item} variant="secondary" className="text-sm">
+                  <Badge
+                    key={item}
+                    variant="secondary"
+                    className="text-sm max-w-full whitespace-normal break-words"
+                  >
                     {item}
                   </Badge>
                 ))}

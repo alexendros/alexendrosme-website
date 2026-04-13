@@ -27,7 +27,7 @@ const socials = [
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-12 md:py-16 space-y-10">
+    <div className="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16 space-y-10">
       <div className="space-y-3">
         <h1 className="text-3xl font-bold text-foreground">Contacto</h1>
         <p className="text-muted-foreground leading-relaxed">
@@ -51,13 +51,16 @@ export default function ContactPage() {
         <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider">Redes</h2>
         <ul className="space-y-3">
           {socials.map((social) => (
-            <li key={social.label} className="flex items-center gap-3">
-              <span className="text-sm text-muted-foreground w-24">{social.label}</span>
+            <li
+              key={social.label}
+              className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3"
+            >
+              <span className="text-sm text-muted-foreground sm:w-24">{social.label}</span>
               <a
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-primary hover:underline"
+                className="text-sm text-primary underline underline-offset-4 decoration-primary/60 hover:decoration-primary break-all sm:break-normal"
               >
                 {social.display}
               </a>

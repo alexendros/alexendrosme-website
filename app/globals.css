@@ -149,8 +149,12 @@
   * {
     @apply border-border;
   }
+  html {
+    overflow-x: hidden;
+  }
   body {
     @apply bg-background text-foreground relative;
+    overflow-x: hidden;
   }
   body::before {
     content: "";

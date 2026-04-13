@@ -17,7 +17,7 @@ export const siteConfig = {
     { label: "Inicio", href: "/" },
     { label: "Sobre mí", href: "/about" },
     { label: "Proyectos", href: "/projects" },
-    { label: "Uses", href: "/uses" },
+    { label: "Herramientas", href: "/herramientas" },
     { label: "Contacto", href: "/contact" },
   ],
   legalNav: [

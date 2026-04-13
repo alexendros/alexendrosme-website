@@ -141,11 +141,28 @@
 
   /* ── Hero ──────────────────────────────────────────────── */
   .hero-section {
+    position: relative;
     padding-block: clamp(3rem, 8vw, 6rem);
     display: flex;
     flex-direction: column;
     gap: clamp(1rem, 2vw, 1.5rem);
     max-width: 52rem;
+  }
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 60%;
+    height: 140%;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at center,
+      color-mix(in oklch, var(--primary) 18%, transparent),
+      transparent 60%
+    );
+    filter: blur(40px);
   }
 
   .hero-signature {
@@ -154,7 +171,6 @@
     font-size: var(--text-display);
     line-height: 1.05;
     letter-spacing: -0.02em;
-    text-shadow: var(--shadow-glow-primary);
     text-wrap: balance;
   }
 

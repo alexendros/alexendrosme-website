@@ -69,7 +69,6 @@ function LogoRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
               role="img"
               viewBox="0 0 24 24"
               className="relative h-11 w-11 transition-transform duration-300 group-hover/logo:scale-110"
-              style={{ filter: "drop-shadow(0 0 10px currentColor)" }}
               aria-label={icon.title}
             >
               <path d={icon.path} fill="currentColor" />

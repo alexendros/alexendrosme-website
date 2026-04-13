@@ -48,6 +48,7 @@ export const metadata: Metadata = {
     images: ["/og/opengraph-image.png"],
   },
   robots: { index: true, follow: true },
+  icons: { icon: "/icon.svg" },
 };
 
 export const viewport: Viewport = {
@@ -61,6 +62,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`dark ${geistSans.variable} ${geistMono.variable}`}>
       <body className="flex min-h-screen flex-col">
+        <a href="#main" className="skip-link">
+          Saltar al contenido
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
@@ -71,7 +75,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <ParticleBg />
         <Nav />
-        <main className="flex-1">{children}</main>
+        <main id="main" className="flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

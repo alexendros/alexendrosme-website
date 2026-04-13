@@ -15,9 +15,11 @@ export default function AboutPage() {
       <section className="space-y-4">
         <h2 className="title">Acto I — Origen</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Itinerario no lineal: años de oficio fuera del software antes de meterme hasta el cuello.
-          Lo cuento con calma en una versión ampliada de esta página — llegará pronto con los
-          detalles que realmente explican cómo trabajo hoy.
+          Itinerario no lineal. Años fuera del software —hostelería, gestión, atención al cliente—
+          que me enseñaron a leer negocios antes que a escribir código. Traje de ahí tres cosas:
+          criterio para distinguir lo que importa del ruido, paciencia para los detalles que nadie
+          ve, y la costumbre de cobrar por resultados. Cuando por fin me senté a programar, ya tenía
+          claro para qué.
         </p>
       </section>
 

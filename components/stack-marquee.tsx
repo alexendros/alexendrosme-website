@@ -110,16 +110,8 @@ function LogoRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
 
 export function StackMarquee() {
   return (
-    <div
-      className="group relative overflow-hidden py-8"
-      style={{
-        maskImage:
-          "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-        WebkitMaskImage:
-          "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-      }}
-    >
-      <div className="flex w-max animate-marquee items-center motion-reduce:animate-none group-hover:[animation-play-state:paused]">
+    <div className="marquee-viewport py-8">
+      <div className="marquee-track items-center">
         <LogoRow />
         <LogoRow ariaHidden />
       </div>

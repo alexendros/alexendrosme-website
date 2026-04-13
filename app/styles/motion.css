@@ -1,0 +1,38 @@
+/* motion.css — keyframes + shadcn accordion theme + reduced-motion overrides. */
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@theme inline {
+  @keyframes accordion-down {
+    from { height: 0; }
+    to   { height: var(--radix-accordion-content-height, var(--accordion-panel-height, auto)); }
+  }
+
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height, var(--accordion-panel-height, auto)); }
+    to   { height: 0; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  body::before {
+    opacity: 0;
+  }
+}

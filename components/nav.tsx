@@ -13,18 +13,18 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-sm">
-      <nav className="mx-auto flex h-14 md:h-16 max-w-3xl items-center justify-between px-4 sm:px-6">
+    <header className="site-nav">
+      <nav className="site-shell site-nav__inner max-w-3xl">
         {/* Logo */}
         <Link
           href="/"
-          className="inline-flex min-h-[44px] items-center font-mono text-lg font-bold text-primary hover:opacity-80 transition-opacity"
+          className="inline-flex min-h-[var(--tap-target-min)] items-center font-mono text-lg font-bold text-primary hover:opacity-80 transition-opacity"
         >
           Alexendros
         </Link>
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-1">
+        <ul className="site-nav__links">
           {siteConfig.nav.map((item) => (
             <li key={item.href}>
               <Link
@@ -68,7 +68,7 @@ export function Nav() {
                     <Link
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className={`flex min-h-[44px] items-center px-3 py-3 rounded-md text-sm font-medium transition-colors ${
+                      className={`flex min-h-[var(--tap-target-min)] items-center px-3 py-3 rounded-md text-sm font-medium transition-colors ${
                         pathname === item.href
                           ? "bg-secondary text-foreground"
                           : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"

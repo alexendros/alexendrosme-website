@@ -1,0 +1,45 @@
+/* typography.css — fluid type scale via clamp(). One source of truth.
+   Identity classes (.display, .headline, .title, .prose-lead) replace
+   manual `text-4xl md:text-5xl` chains. */
+
+@theme {
+  --text-display: clamp(2rem, 4vw + 1rem, 3.5rem);
+  --text-headline: clamp(1.5rem, 2.5vw + 0.75rem, 2.25rem);
+  --text-title: clamp(1.125rem, 1vw + 0.875rem, 1.5rem);
+  --text-body: clamp(1rem, 0.25vw + 0.95rem, 1.125rem);
+  --text-small: 0.875rem;
+}
+
+@layer components {
+  .display {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    font-size: var(--text-display);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .headline {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: var(--text-headline);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .title {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: var(--text-title);
+    line-height: 1.3;
+  }
+
+  .prose-lead {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: var(--text-body);
+    line-height: 1.6;
+    color: var(--muted-foreground);
+    max-width: var(--measure-prose);
+  }
+}

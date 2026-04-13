@@ -27,10 +27,10 @@ const socials = [
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16 space-y-10">
+    <div className="site-shell max-w-3xl section space-y-10">
       <div className="space-y-3">
-        <h1 className="text-3xl font-bold text-foreground">Contacto</h1>
-        <p className="text-muted-foreground leading-relaxed">
+        <h1 className="headline">Contacto</h1>
+        <p className="prose-lead">
           Disponible para consultoría técnica en proyectos donde la intersección tech + legal aporta
           valor real.
         </p>
@@ -38,7 +38,7 @@ export default function ContactPage() {
 
       {/* Email */}
       <section className="space-y-4">
-        <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider">Email</h2>
+        <h2 className="title">Email</h2>
         <Button asChild>
           <a href="mailto:hola@alexendros.me">hola@alexendros.me</a>
         </Button>
@@ -48,19 +48,16 @@ export default function ContactPage() {
 
       {/* Social links */}
       <section className="space-y-4">
-        <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider">Redes</h2>
-        <ul className="space-y-3">
+        <h2 className="title">Redes</h2>
+        <ul>
           {socials.map((social) => (
-            <li
-              key={social.label}
-              className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3"
-            >
-              <span className="text-sm text-muted-foreground sm:w-24">{social.label}</span>
+            <li key={social.label} className="contact-row">
+              <span className="contact-row__label">{social.label}</span>
               <a
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-primary underline underline-offset-4 decoration-primary/60 hover:decoration-primary break-all sm:break-normal"
+                className="contact-row__value underline underline-offset-4 decoration-primary/60 hover:decoration-primary"
               >
                 {social.display}
               </a>
@@ -73,9 +70,7 @@ export default function ContactPage() {
 
       {/* Location */}
       <section className="space-y-2">
-        <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider">
-          Ubicación
-        </h2>
+        <h2 className="title">Ubicación</h2>
         <p className="text-sm text-muted-foreground">Valencia, España</p>
       </section>
     </div>

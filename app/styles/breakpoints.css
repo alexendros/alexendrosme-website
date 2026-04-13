@@ -1,0 +1,10 @@
+/* breakpoints.css — mobile-first. Base is 320px.
+   Each larger breakpoint adds, never corrects. */
+
+@theme {
+  --breakpoint-sm: 40rem;   /* 640px  — large phones / portrait tablet */
+  --breakpoint-md: 48rem;   /* 768px  — tablet */
+  --breakpoint-lg: 64rem;   /* 1024px — laptop */
+  --breakpoint-xl: 80rem;   /* 1280px — desktop */
+  --breakpoint-2xl: 96rem;  /* 1536px — wide */
+}

@@ -48,7 +48,6 @@ export const metadata: Metadata = {
     images: ["/og/opengraph-image.png"],
   },
   robots: { index: true, follow: true },
-  icons: { icon: "/icon.svg" },
 };
 
 export const viewport: Viewport = {

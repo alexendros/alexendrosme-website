@@ -8,12 +8,12 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16 space-y-12">
-      <h1 className="text-3xl font-bold text-foreground">Sobre mí</h1>
+    <div className="site-shell max-w-3xl section space-y-12">
+      <h1 className="headline">Sobre mí</h1>
 
       {/* Acto I */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-foreground">Acto I — Origen</h2>
+        <h2 className="title">Acto I — Origen</h2>
         <p className="text-muted-foreground leading-relaxed">
           Itinerario no lineal: años de oficio fuera del software antes de meterme hasta el cuello.
           Lo cuento con calma en una versión ampliada de esta página — llegará pronto con los
@@ -25,7 +25,7 @@ export default function AboutPage() {
 
       {/* Acto II */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-foreground">Acto II — Transición</h2>
+        <h2 className="title">Acto II — Transición</h2>
         <p className="text-muted-foreground leading-relaxed">
           Salto al software a tiempo completo. Formación autodidacta intensiva en stack moderno:
           Next.js, Supabase, Stripe, Docker, n8n. Primeros proyectos freelance, apertura del
@@ -37,7 +37,7 @@ export default function AboutPage() {
 
       {/* Acto III */}
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold text-foreground">Acto III — Actualidad</h2>
+        <h2 className="title">Acto III — Actualidad</h2>
         <p className="text-muted-foreground leading-relaxed">
           Fundador en activo de KitOS (
           <a
@@ -57,7 +57,7 @@ export default function AboutPage() {
 
       {/* UVP */}
       <section className="space-y-6">
-        <h2 className="text-xl font-semibold text-foreground">Propuesta de valor</h2>
+        <h2 className="title">Propuesta de valor</h2>
         <blockquote className="border-l-2 border-primary pl-4">
           <p className="text-foreground font-medium leading-relaxed">
             &ldquo;Construyo, opero y cobro en mi propio SaaS. Lo que recomiendo lo he probado
@@ -65,59 +65,35 @@ export default function AboutPage() {
           </p>
         </blockquote>
 
-        {/* Diferenciación table */}
-        <div className="relative">
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm border-collapse min-w-[360px]">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="text-left py-3 pr-4 font-medium text-foreground">Dimensión</th>
-                <th className="text-center py-3 px-4 font-medium text-foreground">Alexendros</th>
-                <th className="text-center py-3 pl-4 font-medium text-muted-foreground">
-                  Dev genérico
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border">
-              <tr>
-                <td className="py-3 pr-4 text-muted-foreground">Código fullstack enterprise</td>
-                <td className="py-3 px-4 text-center text-primary">✓</td>
-                <td className="py-3 pl-4 text-center text-muted-foreground">Variable</td>
-              </tr>
-              <tr>
-                <td className="py-3 pr-4 text-muted-foreground">
-                  Cumplimiento legal (RGPD/LOPDGDD) bien integrado
+        {/* Diferenciación — tabla en desktop, lista stack en móvil */}
+        <table className="legal-table">
+          <thead>
+            <tr>
+              <th>Dimensión</th>
+              <th>Alexendros</th>
+              <th>Dev genérico</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Código fullstack enterprise", "✓", "Variable"],
+              ["Cumplimiento legal (RGPD/LOPDGDD) bien integrado", "✓", "Superficial"],
+              ["Producto SaaS propio en producción", "✓", "—"],
+              ["Criterio de negocio desde el primer commit", "✓", "Variable"],
+              ["Build in public documentado", "✓", "Variable"],
+            ].map(([dim, a, b]) => (
+              <tr key={dim}>
+                <td data-label="Dimensión">{dim}</td>
+                <td data-label="Alexendros" className="text-primary">
+                  {a}
                 </td>
-                <td className="py-3 px-4 text-center text-primary">✓</td>
-                <td className="py-3 pl-4 text-center text-muted-foreground">Superficial</td>
-              </tr>
-              <tr>
-                <td className="py-3 pr-4 text-muted-foreground">
-                  Producto SaaS propio en producción
+                <td data-label="Dev genérico" className="text-muted-foreground">
+                  {b}
                 </td>
-                <td className="py-3 px-4 text-center text-primary">✓</td>
-                <td className="py-3 pl-4 text-center text-muted-foreground">—</td>
               </tr>
-              <tr>
-                <td className="py-3 pr-4 text-muted-foreground">
-                  Criterio de negocio desde el primer commit
-                </td>
-                <td className="py-3 px-4 text-center text-primary">✓</td>
-                <td className="py-3 pl-4 text-center text-muted-foreground">Variable</td>
-              </tr>
-              <tr>
-                <td className="py-3 pr-4 text-muted-foreground">Build in public documentado</td>
-                <td className="py-3 px-4 text-center text-primary">✓</td>
-                <td className="py-3 pl-4 text-center text-muted-foreground">Variable</td>
-              </tr>
-            </tbody>
-          </table>
-          </div>
-          <div
-            aria-hidden
-            className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-background to-transparent sm:hidden"
-          />
-        </div>
+            ))}
+          </tbody>
+        </table>
       </section>
     </div>
   );

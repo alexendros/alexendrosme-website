@@ -1,0 +1,56 @@
+/* base.css — global element resets & document-level defaults.
+   Nothing here is component-specific; component styling lives in components.css. */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground relative;
+    overflow-x: hidden;
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Ambient backdrop glow (subtle brand halo) */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -20;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        ellipse 60% 50% at 20% 0%,
+        color-mix(in oklch, var(--primary) 10%, transparent),
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 55% 45% at 85% 100%,
+        color-mix(in oklch, var(--accent) 8%, transparent),
+        transparent 60%
+      );
+  }
+
+  ::selection {
+    background: color-mix(in oklch, var(--primary) 35%, transparent);
+    color: var(--foreground);
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: var(--ring-focus);
+    border-radius: var(--radius-sm);
+  }
+}

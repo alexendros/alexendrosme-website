@@ -17,40 +17,38 @@ export default function Home() {
   return (
     <>
       {/* Hero — visible without scroll, answers: quien, que, para quien */}
-      <section className="py-10 sm:py-16 md:py-24">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <h1 className="text-[clamp(1.75rem,6vw+0.5rem,3rem)] md:text-5xl font-bold leading-tight tracking-tight [text-shadow:0_0_40px_color-mix(in_oklch,var(--primary)_25%,transparent)]">
-            Software que hace su trabajo — y cumple la ley sin drama.
-          </h1>
-          <p className="mt-4 text-lg md:text-xl text-muted-foreground">
-            Fullstack developer. Fundador de{" "}
-            <a
-              href="https://alexendros.pro"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary underline underline-offset-4 decoration-primary/60 hover:decoration-primary"
-            >
-              KitOS
-            </a>
-            . Valencia.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button asChild>
-              <Link href="/projects">Ver proyectos</Link>
-            </Button>
-            <Button variant="outline" asChild>
-              <Link href="/contact">Contacto</Link>
-            </Button>
-          </div>
+      <section className="site-shell hero-section">
+        <h1 className="hero-signature">
+          Software que hace su trabajo — y cumple la ley sin drama.
+        </h1>
+        <p className="prose-lead">
+          Fullstack developer. Fundador de{" "}
+          <a
+            href="https://alexendros.pro"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 decoration-primary/60 hover:decoration-primary"
+          >
+            KitOS
+          </a>
+          . Valencia.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <Button asChild>
+            <Link href="/projects">Ver proyectos</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/contact">Contacto</Link>
+          </Button>
         </div>
       </section>
 
-      <Separator className="mx-auto max-w-3xl px-4 sm:px-6" />
+      <Separator className="site-shell" />
 
       {/* About brief */}
-      <section className="py-12 md:py-16">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <h2 className="text-2xl font-bold mb-4">Sobre mí</h2>
+      <section className="site-shell section section-below-fold">
+        <div className="max-w-3xl">
+          <h2 className="headline mb-4">Sobre mí</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Dev fullstack y fundador de{" "}
@@ -92,13 +90,13 @@ export default function Home() {
         </div>
       </section>
 
-      <Separator className="mx-auto max-w-3xl px-4 sm:px-6" />
+      <Separator className="site-shell" />
 
       {/* Projects preview */}
-      <section className="py-12 md:py-16">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <h2 className="text-2xl font-bold mb-6">Proyectos</h2>
-          <div className="grid gap-4 sm:grid-cols-2">
+      <section className="site-shell section section-below-fold">
+        <div className="max-w-3xl">
+          <h2 className="headline mb-6">Proyectos</h2>
+          <div className="project-grid">
             <Card>
               <CardHeader>
                 <div className="flex items-start justify-between gap-2">
@@ -147,14 +145,14 @@ export default function Home() {
         </div>
       </section>
 
-      <Separator className="mx-auto max-w-3xl px-4 sm:px-6" />
+      <Separator className="site-shell" />
 
       {/* Stack */}
-      <section className="py-12 md:py-16">
+      <section className="section section-below-fold">
         <div className="mx-auto max-w-5xl">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6">
-            <h2 className="text-2xl font-bold mb-2">Stack</h2>
-            <p className="text-muted-foreground mb-10 md:mb-14">
+          <div className="site-shell max-w-3xl">
+            <h2 className="headline mb-2">Stack</h2>
+            <p className="prose-lead mb-10 md:mb-14">
               Las piezas con las que construyo. Ver el detalle y el porqué en{" "}
               <Link
                 href="/herramientas"

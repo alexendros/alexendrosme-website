@@ -5,6 +5,55 @@ Para detalle histórico de planes originales, ver git log.
 
 ---
 
+## 2026-04-13 — Arquitectura CSS enterprise + responsividad mobile-first
+
+Refactor transversal del sistema de estilos y responsividad. Plan en [`humming-tumbling-mitten.md`](../../.claude/plans/humming-tumbling-mitten.md).
+
+### CSS modularizado en `app/styles/`
+
+`app/globals.css` pasa a ser índice (11 líneas). El contenido se parte en 8 parciales por responsabilidad:
+
+- `tokens.css` — colores oklch, radios, fuentes, sombras, easings, `--tap-target-min`, `--measure-prose`, `--safe-inset-x`.
+- `breakpoints.css` — escala completa `sm/md/lg/xl/2xl` (antes sólo `md`).
+- `typography.css` — type scale fluido vía `clamp()` + clases `.display`, `.headline`, `.title`, `.prose-lead`.
+- `base.css` — reset, `::selection`, `:focus-visible` con `--ring-focus`, backdrop glow.
+- `components.css` — clases identitarias (`.site-shell`, `.site-nav`, `.site-footer`, `.hero-section`, `.hero-signature`, `.tool-badge`, `.project-grid`, `.legal-doc`, `.legal-table`, `.contact-row`, `.marquee-track`, `.icon-link`, `.section`, `.section-below-fold`).
+- `utilities.css` — `@utility animate-marquee/no-scrollbar/mask-fade-x` + `@custom-variant` data-* de shadcn.
+- `motion.css` — keyframes + override global `prefers-reduced-motion: reduce`.
+- `print.css` — optimización imprimible de páginas legales.
+
+### Responsividad mobile-first
+
+- Mobile-first real: base 320px, cada breakpoint añade. `sm:` (640), `md:` (768), `lg:` (1024), `xl:` (1280) disponibles.
+- Tipografía fluida con `clamp()` — sustituye cadenas `text-4xl md:text-5xl` manuales.
+- Container queries preparadas en `.project-grid` y `.tool-badge`.
+
+### Clases identitarias sobre utilidades sueltas
+
+- `app/page.tsx`: hero pasa a `.hero-section` + `.hero-signature` (`text-shadow` via token `--shadow-glow-primary`, fin de la violación `color-mix` inline).
+- `app/about/page.tsx`: tabla UVP con `.legal-table` (reflow a lista `data-label` bajo 640px).
+- `app/contact/page.tsx`: `.contact-row` (stack móvil, label auto).
+- `app/herramientas/page.tsx`: `.tool-badge` con `whitespace-normal` + `min-h: 44px` + `overflow-wrap: anywhere`.
+- `app/legal/layout.tsx`: `.legal-doc` con `max-width: var(--measure-prose)`.
+- `components/nav.tsx`: `.site-nav` + `.site-nav__inner` + `.site-nav__links`.
+- `components/footer.tsx`: `.site-footer` + `.icon-link` (hit-area 44×44 WCAG).
+- `components/stack-marquee.tsx`: `.marquee-viewport` + `.marquee-track` (mask + pause hover formalizados).
+
+### Correcciones WCAG 2.1 AA
+
+- `components/ui/button.tsx`: `default` pasa a `h-11` / `size-11` (antes `h-9` — por debajo del mínimo 44px).
+- Iconos footer: `.icon-link` con padding genera hit-area ≥44px (antes SVG 20px sin padding).
+- `:focus-visible` global con `--ring-focus` sustituye outlines por ruta de componente.
+
+### Verificación
+
+- `pnpm typecheck` → 0 errores.
+- `pnpm lint` → 0 errores, 0 warnings.
+- `pnpm build` → 13 páginas estáticas generadas.
+- Cero `oklch()` o `#hex` en `app/`/`components/` fuera de tokens (excepciones documentadas: `stack-marquee.tsx` marcas externas; `particle-bg.tsx` fallbacks de canvas; `app/layout.tsx` `themeColor` meta; `app/icon.svg` favicon).
+
+---
+
 ## 2026-04-13 — /APP_calidad · Quality gate pre-deploy
 
 Toolchain ampliada y quality gate ejecutado antes del deploy a Vercel.

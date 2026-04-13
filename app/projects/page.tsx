@@ -33,9 +33,9 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16 space-y-8">
-      <h1 className="text-3xl font-bold text-foreground">Proyectos</h1>
-      <p className="text-muted-foreground leading-relaxed">
+    <div className="site-shell max-w-3xl section space-y-8">
+      <h1 className="headline">Proyectos</h1>
+      <p className="prose-lead">
         Portfolio de proyectos activos. Cada uno incluye stack específico, estado actual y enlace a
         producción o demo.
       </p>

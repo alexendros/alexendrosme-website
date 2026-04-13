@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
 export const metadata: Metadata = {
@@ -90,10 +89,10 @@ const stack: Section[] = [
 
 export default function HerramientasPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 sm:px-6 py-12 md:py-16 space-y-10">
+    <div className="site-shell max-w-3xl section space-y-10">
       <div className="space-y-3">
-        <h1 className="text-3xl font-bold text-foreground">Herramientas</h1>
-        <p className="text-muted-foreground leading-relaxed">
+        <h1 className="headline">Herramientas</h1>
+        <p className="prose-lead">
           Qué uso, qué hace cada capa y por qué la elegí. Nada de &ldquo;lo mejor del
           mercado&rdquo;: lo que me ha funcionado en proyectos reales.
         </p>
@@ -101,12 +100,10 @@ export default function HerramientasPage() {
 
       <div className="space-y-8">
         {stack.map((section, index) => (
-          <div key={section.category}>
+          <div key={section.category} className="section-below-fold">
             {index > 0 && <Separator className="mb-8" />}
             <div className="space-y-3">
-              <h2 className="text-sm font-semibold text-foreground uppercase tracking-wider">
-                {section.category}
-              </h2>
+              <h2 className="title">{section.category}</h2>
               <p className="text-muted-foreground leading-relaxed">{section.description}</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 <span className="text-foreground font-medium">Por qué: </span>
@@ -114,13 +111,9 @@ export default function HerramientasPage() {
               </p>
               <div className="flex flex-wrap gap-2 pt-1">
                 {section.items.map((item) => (
-                  <Badge
-                    key={item}
-                    variant="secondary"
-                    className="text-sm max-w-full whitespace-normal break-words"
-                  >
+                  <span key={item} className="tool-badge">
                     {item}
-                  </Badge>
+                  </span>
                 ))}
               </div>
             </div>

@@ -1,0 +1,42 @@
+/* print.css — optimizes legal pages for print (aviso-legal, privacidad, cookies). */
+
+@media print {
+  :root {
+    --background: white;
+    --foreground: black;
+    --muted-foreground: #333;
+    --border: #ccc;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  body::before,
+  .site-nav,
+  .site-footer,
+  canvas {
+    display: none !important;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+  }
+
+  .legal-doc {
+    max-width: none;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3 {
+    break-after: avoid;
+  }
+}

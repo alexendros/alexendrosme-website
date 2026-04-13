@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { siteConfig } from "@/lib/site";
@@ -33,7 +27,7 @@ export default function Home() {
               href="https://alexendros.pro"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline"
+              className="text-primary underline underline-offset-4 decoration-primary/60 hover:decoration-primary"
             >
               KitOS
             </a>
@@ -59,34 +53,30 @@ export default function Home() {
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Desarrollador fullstack y fundador de{" "}
-              <strong className="text-foreground">KitOS</strong>, plataforma
-              SaaS de kits digitales verticalizados para sectores específicos.
-              Construyo con Next.js, Supabase y Stripe, con foco en rendimiento
-              real (LCP &lt; 2s), conversión y cumplimiento legal
+              <strong className="text-foreground">KitOS</strong>, plataforma SaaS de kits digitales
+              verticalizados para sectores específicos. Construyo con Next.js, Supabase y Stripe,
+              con foco en rendimiento real (LCP &lt; 2s), conversión y cumplimiento legal
               (RGPD/LOPDGDD).
             </p>
             <p>
-              Antes de dedicarme al software a tiempo completo combiné durante
-              años la práctica jurídica —asesoramiento legal y consultoría— con
-              el desarrollo de productos digitales. Esa intersección entre
-              derecho y tecnología define la forma en que construyo: con
-              precisión contractual en los detalles técnicos y con criterio de
-              negocio desde el primer commit.
+              Antes de dedicarme al software a tiempo completo combiné durante años la práctica
+              jurídica —asesoramiento legal y consultoría— con el desarrollo de productos digitales.
+              Esa intersección entre derecho y tecnología define la forma en que construyo: con
+              precisión contractual en los detalles técnicos y con criterio de negocio desde el
+              primer commit.
             </p>
             <p>
-              Actualmente:{" "}
-              <strong className="text-foreground">KitOS</strong> en producción
-              en{" "}
+              Actualmente: <strong className="text-foreground">KitOS</strong> en producción en{" "}
               <a
                 href="https://alexendros.pro"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary hover:underline"
+                className="text-primary underline underline-offset-4 decoration-primary/60 hover:decoration-primary"
               >
                 alexendros.pro
               </a>
-              , con StageKit (música electrónica), LexKit (despachos) y GestKit
-              (gestorías) en roadmap.
+              , con StageKit (música electrónica), LexKit (despachos) y GestKit (gestorías) en
+              roadmap.
             </p>
           </div>
           <div className="mt-6">
@@ -111,8 +101,8 @@ export default function Home() {
                   <Badge className="shrink-0">En producción</Badge>
                 </div>
                 <CardDescription>
-                  Plataforma SaaS de kits digitales verticalizados. Next.js +
-                  Supabase + Stripe + Turborepo.
+                  Plataforma SaaS de kits digitales verticalizados. Next.js + Supabase + Stripe +
+                  Turborepo.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -136,14 +126,11 @@ export default function Home() {
                   </Badge>
                 </div>
                 <CardDescription>
-                  Portfolio y marca personal. Next.js static + Tailwind v4 +
-                  oklch tokens.
+                  Portfolio y marca personal. Next.js static + Tailwind v4 + oklch tokens.
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <span className="text-sm text-muted-foreground">
-                  alexendros.me
-                </span>
+                <span className="text-sm text-muted-foreground">alexendros.me</span>
               </CardContent>
             </Card>
           </div>

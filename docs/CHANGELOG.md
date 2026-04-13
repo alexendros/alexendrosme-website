@@ -5,6 +5,46 @@ Para detalle histórico de planes originales, ver git log.
 
 ---
 
+## 2026-04-13 — /APP_calidad · Quality gate pre-deploy
+
+Toolchain ampliada y quality gate ejecutado antes del deploy a Vercel.
+
+### Toolchain añadido
+
+- **Prettier 3.8** (`.prettierrc.json`, `.prettierignore`): `semi: true`, `singleQuote: false` (alineado con el código existente), `printWidth: 100`, `trailingComma: "all"`.
+- **eslint-config-prettier**: integrado al final del flat config para desactivar reglas que chocan con Prettier.
+- **depcheck 1.4** (`.depcheckrc.json`): ignora falsos positivos estructurales (tailwindcss y @tailwindcss/postcss se cargan vía PostCSS, tw-animate-css vía CSS `@import`, @types/node ambient, eslint-config-next requerido por `next lint`).
+- **ts-prune 0.10**: ejecución manual; entries detectados son convenciones Next.js (`default`/`metadata` exports en `app/**/page.tsx`) y subcomponentes shadcn expuestos para consumo externo — sin deuda real.
+- **ESLint**: regla `no-console: ["warn", { allow: ["warn", "error"] }]` añadida. `console.error` legítimo en `app/error.tsx` pasa.
+- **Scripts**: `format`, `format:check`, `deadcode:deps`, `deadcode:exports` en [package.json](../package.json).
+
+### Quality gate ejecutado (verde)
+
+- `pnpm lint` → 0 errores, 0 warnings.
+- `pnpm typecheck` → 0 errores.
+- `pnpm format:check` → todos los archivos conformes (23 archivos reformateados en este pase).
+- `pnpm deadcode:deps` → sin issues.
+- `pnpm build` → 11 páginas estáticas generadas, export a `out/` sin warnings.
+
+### Checklist ISO 25010 — firma pre-deploy
+
+| Característica | Estado | Evidencia                                                                                                                                     |
+| -------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Funcionalidad  | ✅     | 11 rutas estáticas renderizan; nav desktop+mobile, legales completos, JSON-LD validado.                                                       |
+| Rendimiento    | ⏳     | CWV targets definidos en CLAUDE.md (LCP<2.0s desktop); Lighthouse pendiente post-deploy (Fase 4).                                             |
+| Compatibilidad | ✅     | Next.js 15 static export + React 19; navegadores modernos; responsive con Tailwind v4.                                                        |
+| Usabilidad     | ✅     | Test de 5 segundos superado; nav accesible; contenido legal en es-ES.                                                                         |
+| Fiabilidad     | ✅     | Sin backend → superficie de fallo mínima; `app/error.tsx` + `app/not-found.tsx` cubren edge cases.                                            |
+| Seguridad      | ✅     | CSP strict + HSTS preload + X-Frame-Options DENY ([vercel.json](../vercel.json)); `'unsafe-inline'` mitigado por ausencia de input y backend. |
+| Mantenibilidad | ✅     | TS strict + `noUncheckedIndexedAccess`; ESLint flat + Prettier + depcheck limpios; estructura documentada en CLAUDE.md.                       |
+| Portabilidad   | ✅     | Static export → cualquier CDN; sin envs requeridas en runtime; sin paths hardcoded.                                                           |
+
+### Deuda técnica documentada (aceptada)
+
+- **Sin tests automatizados**: ROI bajo para landing estática sin lógica de negocio; revaluar si se añade interactividad no trivial.
+- **Sin CI pipeline**: el build de Vercel actúa como gate implícito; GitHub Actions con `lint + typecheck + format:check + build` es el siguiente paso natural post-deploy.
+- **`next lint` deprecado**: warning de Next.js 16; migrar a ESLint CLI directo cuando se actualice el framework.
+
 ## 2026-04-11 — Split a repo standalone
 
 - Extraído de `alexendros-monorepo@a180d73` como repositorio independiente.

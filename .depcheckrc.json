@@ -1,0 +1,10 @@
+{
+  "ignores": [
+    "tailwindcss",
+    "@tailwindcss/postcss",
+    "tw-animate-css",
+    "@types/node",
+    "eslint-config-next"
+  ],
+  "ignore-patterns": [".next", "out", "node_modules"]
+}

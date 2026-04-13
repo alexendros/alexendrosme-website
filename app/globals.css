@@ -8,19 +8,13 @@
       height: 0;
     }
     to {
-      height: var(
-        --radix-accordion-content-height,
-        var(--accordion-panel-height, auto)
-      );
+      height: var(--radix-accordion-content-height, var(--accordion-panel-height, auto));
     }
   }
 
   @keyframes accordion-up {
     from {
-      height: var(
-        --radix-accordion-content-height,
-        var(--accordion-panel-height, auto)
-      );
+      height: var(--radix-accordion-content-height, var(--accordion-panel-height, auto));
     }
     to {
       height: 0;
@@ -144,13 +138,12 @@
   --muted-foreground: oklch(0.65 0.01 240);
   --accent: oklch(0.65 0.18 55);
   --accent-foreground: oklch(0.09 0.005 240);
-  --destructive: oklch(0.60 0.22 25);
+  --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(0.95 0.005 240);
   --border: oklch(0.22 0.01 240);
   --input: oklch(0.22 0.01 240);
   --ring: oklch(0.72 0.22 142);
 }
-
 
 @layer base {
   * {

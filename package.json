@@ -8,7 +8,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write \"**/*.{ts,tsx,js,mjs,json,md,css}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,mjs,json,md,css}\"",
+    "deadcode:deps": "depcheck",
+    "deadcode:exports": "ts-prune"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -28,8 +32,12 @@
     "@types/node": "^22.0.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
+    "depcheck": "^1.4.7",
     "eslint": "^9.27.0",
     "eslint-config-next": "^15.3.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.2",
+    "ts-prune": "^0.10.3",
     "typescript": "^5.8.0",
     "typescript-eslint": "^8.33.0"
   },

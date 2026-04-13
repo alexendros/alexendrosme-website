@@ -49,16 +49,9 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="es"
-      className={`dark ${geistSans.variable} ${geistMono.variable}`}
-    >
+    <html lang="es" className={`dark ${geistSans.variable} ${geistMono.variable}`}>
       <body className="flex min-h-screen flex-col">
         <script
           type="application/ld+json"

@@ -31,7 +31,7 @@ Lista viva de pendientes del repositorio standalone `alexendros-me`.
 
 - [x] **Lighthouse audit** (2026-04-13, commit 0beaa9b):
   - Desktop: Perf 99 · A11y 96 · BP 100 · SEO 100 (LCP 0.6s, CLS 0.017, TBT 0)
-  - Mobile:  Perf 99 · A11y 96 · BP 100 · SEO 100 (LCP 1.8s, CLS 0, TBT 90ms)
+  - Mobile: Perf 99 · A11y 96 · BP 100 · SEO 100 (LCP 1.8s, CLS 0, TBT 90ms)
 - [ ] **A11y color-contrast** (Lighthouse 2026-04-13): un audit `color-contrast` falla en mobile/desktop. Identificar par color/fondo (probable `text-muted-foreground` sobre `bg-background`) y subir contraste ≥ 4.5:1.
 - [x] **SEO**: `curl https://alexendros.me/sitemap.xml` y `/robots.txt` → HTTP/2 200 (2026-04-12).
 - [x] **Smoke test** (2026-04-13): 11 rutas → todas 200 (`/`, `/about`, `/projects`, `/herramientas`, `/uses`, `/contact`, 3× `/legal/*`, `/robots.txt`, `/sitemap.xml`).

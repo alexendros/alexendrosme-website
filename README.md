@@ -37,16 +37,16 @@ La uso también como banco de pruebas de identidad visual antes de llevar las de
 
 ## Stack
 
-| Capa             | Elección                                                                  |
-| ---------------- | ------------------------------------------------------------------------- |
-| Framework        | Next.js 15 · App Router · React 19 · TypeScript `strict`                  |
-| Estilos          | Tailwind CSS v4 (CSS-first) · tokens `oklch` dark-first                   |
-| UI               | shadcn/ui inline · Radix primitives · `lucide-react`                      |
-| Tipografía       | Geist Sans + Geist Mono (self-hosted en `public/fonts/`)                  |
+| Capa             | Elección                                                                    |
+| ---------------- | --------------------------------------------------------------------------- |
+| Framework        | Next.js 15 · App Router · React 19 · TypeScript `strict`                    |
+| Estilos          | Tailwind CSS v4 (CSS-first) · tokens `oklch` dark-first                     |
+| UI               | shadcn/ui inline · Radix primitives · `lucide-react`                        |
+| Tipografía       | Geist Sans + Geist Mono (self-hosted en `public/fonts/`)                    |
 | Calidad          | ESLint flat + Prettier 3 + depcheck + ts-prune · `noUncheckedIndexedAccess` |
-| Package manager  | pnpm 10 · Node ≥ 22                                                       |
-| Despliegue       | Vercel (región `mad1`) — static export servido desde CDN                  |
-| Pair programming | [Claude Code](https://claude.com/claude-code) — asistente en CLI + VS Code |
+| Package manager  | pnpm 10 · Node ≥ 22                                                         |
+| Despliegue       | Vercel (región `mad1`) — static export servido desde CDN                    |
+| Pair programming | [Claude Code](https://claude.com/claude-code) — asistente en CLI + VS Code  |
 
 ## Decisiones deliberadas (y lo que no hay)
 
@@ -66,15 +66,15 @@ pnpm build        # genera out/ — HTML estático listo para CDN
 
 ### Scripts
 
-| Comando                  | Qué hace                                           |
-| ------------------------ | -------------------------------------------------- |
-| `pnpm dev`               | Dev server con Turbopack                           |
-| `pnpm build`             | Build + static export a `out/`                     |
-| `pnpm typecheck`         | `tsc --noEmit`                                     |
-| `pnpm lint`              | ESLint flat config                                 |
-| `pnpm format` / `:check` | Prettier write / check                             |
-| `pnpm deadcode:deps`     | depcheck · dependencias no usadas                  |
-| `pnpm deadcode:exports`  | ts-prune · exports no consumidos                   |
+| Comando                  | Qué hace                          |
+| ------------------------ | --------------------------------- |
+| `pnpm dev`               | Dev server con Turbopack          |
+| `pnpm build`             | Build + static export a `out/`    |
+| `pnpm typecheck`         | `tsc --noEmit`                    |
+| `pnpm lint`              | ESLint flat config                |
+| `pnpm format` / `:check` | Prettier write / check            |
+| `pnpm deadcode:deps`     | depcheck · dependencias no usadas |
+| `pnpm deadcode:exports`  | ts-prune · exports no consumidos  |
 
 ## Estructura
 
@@ -99,7 +99,6 @@ Quality gate verde en el último pase (`2026-04-13`):
 - `pnpm build` → 11 páginas estáticas, sin warnings
 
 Checklist ISO 25010 firmada pre-deploy en [`docs/CHANGELOG.md`](./docs/CHANGELOG.md).
-
 
 ## Contacto
 

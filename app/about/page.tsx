@@ -60,8 +60,8 @@ export default function AboutPage() {
         <h2 className="title">Propuesta de valor</h2>
         <blockquote className="border-l-2 border-primary pl-4">
           <p className="text-foreground font-medium leading-relaxed">
-            &ldquo;Construyo, opero y cobro en mi propio SaaS. Lo que recomiendo lo he probado
-            antes en producción.&rdquo;
+            &ldquo;Construyo, opero y cobro en mi propio SaaS. Lo que recomiendo lo he probado antes
+            en producción.&rdquo;
           </p>
         </blockquote>
 

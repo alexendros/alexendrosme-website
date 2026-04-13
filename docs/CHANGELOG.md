@@ -18,7 +18,7 @@ Refactor transversal del sistema de estilos y responsividad. Plan en [`humming-t
 - `typography.css` — type scale fluido vía `clamp()` + clases `.display`, `.headline`, `.title`, `.prose-lead`.
 - `base.css` — reset, `::selection`, `:focus-visible` con `--ring-focus`, backdrop glow.
 - `components.css` — clases identitarias (`.site-shell`, `.site-nav`, `.site-footer`, `.hero-section`, `.hero-signature`, `.tool-badge`, `.project-grid`, `.legal-doc`, `.legal-table`, `.contact-row`, `.marquee-track`, `.icon-link`, `.section`, `.section-below-fold`).
-- `utilities.css` — `@utility animate-marquee/no-scrollbar/mask-fade-x` + `@custom-variant` data-* de shadcn.
+- `utilities.css` — `@utility animate-marquee/no-scrollbar/mask-fade-x` + `@custom-variant` data-\* de shadcn.
 - `motion.css` — keyframes + override global `prefers-reduced-motion: reduce`.
 - `print.css` — optimización imprimible de páginas legales.
 

@@ -56,10 +56,7 @@ const items: StackItem[] = [
 
 function LogoRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
   return (
-    <div
-      className="flex shrink-0 items-center gap-14 px-7"
-      aria-hidden={ariaHidden || undefined}
-    >
+    <div className="flex shrink-0 items-center gap-14 px-7" aria-hidden={ariaHidden || undefined}>
       {items.map(({ icon, label, color, href }) => {
         const content = (
           <>
@@ -80,9 +77,7 @@ function LogoRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
           </>
         );
 
-        const linkProps = ariaHidden
-          ? { tabIndex: -1, "aria-hidden": true as const }
-          : {};
+        const linkProps = ariaHidden ? { tabIndex: -1, "aria-hidden": true as const } : {};
 
         return (
           <a
@@ -95,9 +90,7 @@ function LogoRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
             title={`${icon.title} — ${href}`}
             {...linkProps}
           >
-            <span className="relative flex h-11 w-11 items-center justify-center">
-              {content}
-            </span>
+            <span className="relative flex h-11 w-11 items-center justify-center">{content}</span>
             <span className="text-xs font-medium tracking-wide text-muted-foreground transition-colors group-hover/logo:text-foreground">
               {label}
             </span>

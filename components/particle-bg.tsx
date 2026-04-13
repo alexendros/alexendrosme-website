@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Particle = {
   x: number;
@@ -14,15 +14,22 @@ type Particle = {
 
 export function ParticleBg() {
   const ref = useRef<HTMLCanvasElement | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  // Respetar prefers-reduced-motion: si el usuario reduce movimiento, no montamos el canvas.
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
+    if (!mounted) return;
     const canvas = ref.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const styles = getComputedStyle(document.documentElement);
     const primary = styles.getPropertyValue("--primary").trim() || "oklch(0.72 0.22 142)";
@@ -60,14 +67,12 @@ export function ParticleBg() {
       const h = window.innerHeight;
       ctx.clearRect(0, 0, w, h);
       for (const p of particles) {
-        if (!reduce) {
-          p.x += p.vx;
-          p.y += p.vy;
-          if (p.x < -2) p.x = w + 2;
-          else if (p.x > w + 2) p.x = -2;
-          if (p.y < -2) p.y = h + 2;
-          else if (p.y > h + 2) p.y = -2;
-        }
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < -2) p.x = w + 2;
+        else if (p.x > w + 2) p.x = -2;
+        if (p.y < -2) p.y = h + 2;
+        else if (p.y > h + 2) p.y = -2;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         const color = p.hue === 0 ? primary : accent;
@@ -76,7 +81,7 @@ export function ParticleBg() {
         ctx.fill();
         ctx.globalAlpha = 1;
       }
-      if (!reduce) raf = requestAnimationFrame(draw);
+      raf = requestAnimationFrame(draw);
     };
 
     resize();
@@ -87,7 +92,9 @@ export function ParticleBg() {
       window.removeEventListener("resize", resize);
       if (raf) cancelAnimationFrame(raf);
     };
-  }, []);
+  }, [mounted]);
+
+  if (!mounted) return null;
 
   return (
     <canvas ref={ref} aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10" />

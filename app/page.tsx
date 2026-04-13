@@ -18,6 +18,13 @@ export default function Home() {
     <>
       {/* Hero — visible without scroll, answers: quien, que, para quien */}
       <section className="site-shell hero-section">
+        <div className="flex flex-wrap items-center gap-3">
+          <p className="hero-eyebrow">Valencia · Fullstack · KitOS</p>
+          <span className="availability-pill">
+            <span className="availability-pill__dot" aria-hidden="true" />
+            Disponible
+          </span>
+        </div>
         <h1 className="hero-signature">
           Software que hace su trabajo — y cumple la ley sin drama.
         </h1>
@@ -35,10 +42,10 @@ export default function Home() {
         </p>
         <div className="flex flex-wrap gap-3">
           <Button asChild>
-            <Link href="/projects">Ver proyectos</Link>
+            <Link href="/contact">Hablemos</Link>
           </Button>
           <Button variant="outline" asChild>
-            <Link href="/contact">Contacto</Link>
+            <Link href="/projects">Ver proyectos</Link>
           </Button>
         </div>
       </section>

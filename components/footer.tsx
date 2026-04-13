@@ -62,8 +62,18 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Contacto rápido */}
+        <div className="mt-6">
+          <a
+            href="mailto:hola@alexendros.me"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            hola@alexendros.me
+          </a>
+        </div>
+
         {/* Copyright */}
-        <p className="mt-6 text-sm text-muted-foreground">
+        <p className="mt-2 text-sm text-muted-foreground">
           © {year} Alejandro Domingo Agustí. Todos los derechos reservados.
         </p>
       </div>

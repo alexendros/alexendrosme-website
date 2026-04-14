@@ -46,6 +46,17 @@ export default function ContactPage() {
 
       <Separator />
 
+      {/* Tiempo de respuesta */}
+      <section className="space-y-4">
+        <h2 className="title">Tiempo de respuesta</h2>
+        <p className="text-muted-foreground">
+          24–48h en días laborables. Para proyectos concretos, indica alcance y plazo en el email —
+          así la primera respuesta ya es útil.
+        </p>
+      </section>
+
+      <Separator />
+
       {/* Social links */}
       <section className="space-y-4">
         <h2 className="title">Redes</h2>

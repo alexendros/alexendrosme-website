@@ -5,6 +5,51 @@ Para detalle histórico de planes originales, ver git log.
 
 ---
 
+## 2026-04-14 — Sesión UX (lotes A/B/C/D) + residuos de consistencia
+
+Cierre de la pasada de identidad visual y accesibilidad sobre la landing. Tres PRs encadenados (#21, #22) más un lote D ligero de contenido.
+
+### chore(format) — Prettier 3 aplicado al repo (`27c9449`)
+
+Pase de formato sobre 15 archivos tras configurar el quality gate del 2026-04-13. Sin cambios funcionales.
+
+### PR #21 — Lotes A / B / C
+
+**Lote A · a11y + placeholders**
+
+- Skip-link al contenido principal para lectores de pantalla y navegación por teclado.
+- Favicon migrado a `app/icon.svg` por convención Next.js (elimina `<link rel="icon">` manual).
+- `ParticleBg` respeta `prefers-reduced-motion: reduce` (no anima si el sistema lo pide).
+- `/about` Acto I reescrito sin texto placeholder.
+
+**Lote B · pulido de identidad**
+
+- Nav activo con barra animada bajo el link en curso + sombra scroll-aware al separarse del hero.
+- Hero reforzado: eyebrow, pill "Disponible" y CTA invertido con primario en "Hablemos".
+- Footer con email `hola@alexendros.me` visible (antes solo iconos sociales).
+- `/uses` pasa a `.headline` para alinear tipografía con el resto de páginas.
+
+**Lote C · novedad visual**
+
+- View Transitions API habilitada para navegación entre rutas.
+- Grain noise sutil en `body` para romper planos oklch uniformes.
+- Hero glow reubicado a pseudo-elemento para no penalizar el LCP.
+- `StackMarquee` sin `drop-shadow` redundante (ya lo aporta el glow global).
+- `/projects` reestructurado en secciones por estado (producción, desarrollo, roadmap).
+
+### PR #22 — Residuos de consistencia
+
+- `app/not-found.tsx` y `app/error.tsx` pasan a `.headline` + `.site-shell` para alinearse con el resto de páginas.
+- `public/sitemap.xml`: `lastmod` actualizado a 2026-04-14 en las rutas tocadas.
+- `app/apple-icon.tsx` nuevo con `ImageResponse` 180×180 + `dynamic = "force-static"`. Colores en hex porque Satori no admite `oklch()`.
+
+### Lote D · contenido ligero
+
+- `/contact`: nueva sección "Tiempo de respuesta" entre Email y Redes (24–48h laborables, guía para primer email útil).
+- `/projects` · roadmap: reformulado con verticales explícitas (StageKit → música electrónica, LexKit → despachos, GestKit → gestorías). Sin URLs ni promesas de fecha.
+
+---
+
 ## 2026-04-13 — Arquitectura CSS enterprise + responsividad mobile-first
 
 Refactor transversal del sistema de estilos y responsividad. Plan en [`humming-tumbling-mitten.md`](../../.claude/plans/humming-tumbling-mitten.md).

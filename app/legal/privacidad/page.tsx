@@ -30,7 +30,7 @@ export default function PrivacidadPage() {
         </li>
         <li>
           <strong className="text-foreground">Email de contacto:</strong>{" "}
-          <a href="mailto:hola@alexendros.me">hola@alexendros.me</a>
+          <a href="mailto:contacto@alexendros.me">contacto@alexendros.me</a>
         </li>
       </ul>
 
@@ -55,9 +55,9 @@ export default function PrivacidadPage() {
         </li>
         <li>
           <strong className="text-foreground">Contacto voluntario por email</strong> — Si el usuario
-          contacta a través de <a href="mailto:hola@alexendros.me">hola@alexendros.me</a>, los datos
-          proporcionados se tratarán exclusivamente para responder a la consulta. Base legal: Art.
-          6.1.b RGPD (medidas precontractuales a petición del interesado).
+          contacta a través de <a href="mailto:contacto@alexendros.me">contacto@alexendros.me</a>,
+          los datos proporcionados se tratarán exclusivamente para responder a la consulta. Base
+          legal: Art. 6.1.b RGPD (medidas precontractuales a petición del interesado).
         </li>
       </ul>
 
@@ -122,7 +122,7 @@ export default function PrivacidadPage() {
       </ul>
       <p>
         Para ejercer estos derechos, puede dirigirse a:{" "}
-        <a href="mailto:hola@alexendros.me">hola@alexendros.me</a>
+        <a href="mailto:contacto@alexendros.me">contacto@alexendros.me</a>
       </p>
 
       <h2>8. Derecho a presentar reclamación ante la AEPD</h2>

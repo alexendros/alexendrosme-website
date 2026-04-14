@@ -5,7 +5,7 @@ export const siteConfig = {
   description:
     "Fullstack developer especializado en Next.js y Supabase. Fundador de KitOS. Valencia.",
   url: "https://alexendros.me",
-  email: "hola@alexendros.me",
+  email: "contacto@alexendros.me",
   location: "Valencia, España",
   links: {
     pro: "https://alexendros.pro",

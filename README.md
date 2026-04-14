@@ -11,7 +11,7 @@
 [![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-inline-000)](https://ui.shadcn.com)
 [![Deploy · Vercel](https://img.shields.io/badge/Deploy-Vercel-000?logo=vercel&logoColor=white)](https://vercel.com)
 
-[alexendros.me](https://alexendros.me) · [hola@alexendros.me](mailto:hola@alexendros.me)
+[alexendros.me](https://alexendros.me) · [contacto@alexendros.me](mailto:contacto@alexendros.me)
 
 </div>
 
@@ -104,7 +104,7 @@ Checklist ISO 25010 firmada pre-deploy en [`docs/CHANGELOG.md`](./docs/CHANGELOG
 
 - **Web**: [alexendros.me](https://alexendros.me)
 - **Producto**: [alexendros.pro](https://alexendros.pro)
-- **Email**: [hola@alexendros.me](mailto:hola@alexendros.me)
+- **Email**: [contacto@alexendros.me](mailto:contacto@alexendros.me)
 
 <div align="center">
 

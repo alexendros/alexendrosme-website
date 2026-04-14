@@ -65,10 +65,10 @@ export function Footer() {
         {/* Contacto rápido */}
         <div className="mt-6">
           <a
-            href="mailto:hola@alexendros.me"
+            href="mailto:contacto@alexendros.me"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            hola@alexendros.me
+            contacto@alexendros.me
           </a>
         </div>
 

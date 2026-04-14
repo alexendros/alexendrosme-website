@@ -45,7 +45,7 @@ package_manager: pnpm@10+
 - Server Components por defecto. `"use client"` solo para interactividad browser.
 - **NO** API routes, **NO** middleware, **NO** backend de ningun tipo.
 - Commits: nunca a `main` directo. Feature branch + PR.
-- Repo publico: **nunca** introducir secrets, tokens, `.env*` ni rutas a sistemas internos. El unico dato personal presente es el NIF en `/legal/aviso-legal` (exigido por LSSI-CE Art. 10) y el email publico `hola@alexendros.me`.
+- Repo publico: **nunca** introducir secrets, tokens, `.env*` ni rutas a sistemas internos. El unico dato personal presente es el NIF en `/legal/aviso-legal` (exigido por LSSI-CE Art. 10) y el email publico `contacto@alexendros.me`.
 
 ### Seguridad (riesgos aceptados)
 

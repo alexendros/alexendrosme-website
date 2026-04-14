@@ -40,7 +40,7 @@ export default function ContactPage() {
       <section className="space-y-4">
         <h2 className="title">Email</h2>
         <Button asChild>
-          <a href="mailto:hola@alexendros.me">hola@alexendros.me</a>
+          <a href="mailto:contacto@alexendros.me">contacto@alexendros.me</a>
         </Button>
       </section>
 

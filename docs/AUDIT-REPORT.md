@@ -78,7 +78,7 @@ Rama: `audit/cleanup-20260412`
 
 - CSP con `'unsafe-inline'` para `script-src` y `style-src`. Motivo: Next.js 15 hydration inline scripts + JSON-LD (`dangerouslySetInnerHTML` en `app/layout.tsx`) + Tailwind v4 estilos inline. Sin input de usuario ni backend — superficie de ataque mínima.
 - NIF 21002968N expuesto en `/legal/aviso-legal` — requerido por LSSI-CE Art. 10.
-- Email `hola@alexendros.me` expuesto en `/contact` — contacto intencional.
+- Email `contacto@alexendros.me` expuesto en `/contact` — contacto intencional.
 
 ## Pendientes (no bloqueantes)
 

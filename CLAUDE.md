@@ -21,7 +21,7 @@ package_manager: pnpm@10+
 - **Sitio estatico puro** (`output: 'export'` en `next.config.ts`) — SIN backend, sin API routes, sin middleware, sin auth, sin base de datos.
 - **Proposito**: campo de pruebas de branding/UI. Valida la identidad visual antes de aplicarla a `alexendros.pro`.
 - **Redirige a**: `alexendros.pro` para productos, servicios y dashboards (KitOS).
-- **Fase 3 completa** (3/3 planes — ver `docs/CHANGELOG.md`). Pendiente: deploy Vercel + DNS.
+- **Fase 3 completa + UX polish** (PRs #21/#22/#23 en 2026-04-14). **En producción en `alexendros.me`** (apex y www vía Vercel).
 
 ## 3. STACK
 
@@ -152,7 +152,8 @@ pnpm lint
 ## 8. ESTADO
 
 - **Fase 3 cerrada** (3/3 planes completados, ver `docs/CHANGELOG.md`).
-- **Pendiente de deploy**: ver `TASKS.md` para la lista viva de siguientes pasos (crear repo GitHub, proyecto Vercel, DNS, Lighthouse audit).
+- **En producción** en `alexendros.me` (apex + www vía Vercel, preview por PR activo).
+- **Pendientes vivos**: ver `TASKS.md` — Lighthouse real sobre prod, posible Lote D extendido (contenido `/projects`).
 
 ## 9. INTEGRACION CON EL RESTO DEL ECOSISTEMA ALEXENDROS
 

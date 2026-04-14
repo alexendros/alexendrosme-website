@@ -114,8 +114,9 @@ export default function ProjectsPage() {
       <section className="space-y-4">
         <h2 className="title">En roadmap</h2>
         <p className="text-muted-foreground">
-          StageKit, LexKit y GestKit caminando en el roadmap de KitOS. Más detalle público cuando
-          haya algo que mostrar sin humo.
+          <strong>StageKit</strong> (producción musical electrónica), <strong>LexKit</strong>{" "}
+          (despachos jurídicos) y <strong>GestKit</strong> (gestorías) caminando en el roadmap de
+          KitOS. Público cuando haya algo operativo, no antes.
         </p>
       </section>
     </div>

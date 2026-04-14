@@ -31,7 +31,7 @@ export function Nav() {
         {/* Logo */}
         <Link
           href="/"
-          className="inline-flex min-h-[var(--tap-target-min)] items-center font-mono text-lg font-bold text-primary hover:opacity-80 transition-opacity"
+          className="inline-flex min-h-[var(--tap-target-min)] items-center font-sans text-lg font-bold tracking-tight text-primary hover:opacity-80 transition-opacity"
         >
           Alexendros
         </Link>
@@ -68,7 +68,7 @@ export function Nav() {
             <div className="mt-8">
               <Link
                 href="/"
-                className="font-mono text-lg font-bold text-primary block mb-6"
+                className="font-sans text-lg font-bold tracking-tight text-primary block mb-6"
                 onClick={() => setOpen(false)}
               >
                 Alexendros

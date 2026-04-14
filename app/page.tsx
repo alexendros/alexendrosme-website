@@ -26,7 +26,7 @@ export default function Home() {
           </span>
         </div>
         <h1 className="hero-signature">
-          Software que hace su trabajo — y cumple la ley sin drama.
+          Creo herramientas digitales que funcionan. Y siguen funcionando.
         </h1>
         <p className="prose-lead">
           Fullstack developer. Fundador de{" "}

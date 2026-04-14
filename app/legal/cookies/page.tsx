@@ -54,7 +54,7 @@ export default function CookiesPage() {
         <li>
           <strong className="text-foreground">Solicitar información</strong> adicional sobre el
           tratamiento de sus datos a través de:{" "}
-          <a href="mailto:hola@alexendros.me">hola@alexendros.me</a>
+          <a href="mailto:contacto@alexendros.me">contacto@alexendros.me</a>
         </li>
       </ul>
 

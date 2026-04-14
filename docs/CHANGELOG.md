@@ -26,7 +26,7 @@ Pase de formato sobre 15 archivos tras configurar el quality gate del 2026-04-13
 
 - Nav activo con barra animada bajo el link en curso + sombra scroll-aware al separarse del hero.
 - Hero reforzado: eyebrow, pill "Disponible" y CTA invertido con primario en "Hablemos".
-- Footer con email `hola@alexendros.me` visible (antes solo iconos sociales).
+- Footer con email `contacto@alexendros.me` visible (antes solo iconos sociales).
 - `/uses` pasa a `.headline` para alinear tipografía con el resto de páginas.
 
 **Lote C · novedad visual**
@@ -170,7 +170,7 @@ Cierre de la Fase 3: shell de layout, contenido + legales, SEO y headers. 11 pá
   - `/legal/privacidad` — RGPD Art. 13, 8 secciones, SCCs, periodos de retención.
   - `/legal/cookies` — Guía AEPD 2023, inventario de cookies.
 - `app/legal/layout.tsx` con tipografía manual vía variantes arbitrarias Tailwind (sin dependencia `@tailwindcss/typography`).
-- Email `hola@alexendros.me` expuesto en `/contact` (riesgo T-03-04 aceptado: contacto intencional).
+- Email `contacto@alexendros.me` expuesto en `/contact` (riesgo T-03-04 aceptado: contacto intencional).
 
 ### Plan 03 — SEO, headers y build verificado (2026-04-09)
 

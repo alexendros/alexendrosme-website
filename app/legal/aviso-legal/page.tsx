@@ -29,7 +29,7 @@ export default function AvisoLegalPage() {
         </li>
         <li>
           <strong className="text-foreground">Email de contacto:</strong>{" "}
-          <a href="mailto:hola@alexendros.me">hola@alexendros.me</a>
+          <a href="mailto:contacto@alexendros.me">contacto@alexendros.me</a>
         </li>
         <li>
           <strong className="text-foreground">Actividad:</strong> Desarrollo de software y servicios

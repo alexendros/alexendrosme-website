@@ -76,6 +76,18 @@ export function Footer() {
         <p className="mt-2 text-sm text-muted-foreground">
           © {year} Alejandro Domingo Agustí. Todos los derechos reservados.
         </p>
+
+        {/* Afiliados */}
+        <p className="mt-2 text-xs text-muted-foreground">
+          Esta web incluye enlaces de afiliado (ver{" "}
+          <Link
+            href="/herramientas#recomendaciones"
+            className="underline underline-offset-4 decoration-primary/60"
+          >
+            Recomendaciones
+          </Link>
+          ). Si contratas a través de ellos, puedo recibir una comisión sin coste extra para ti.
+        </p>
       </div>
     </footer>
   );

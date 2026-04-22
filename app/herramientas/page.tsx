@@ -14,6 +14,31 @@ type Section = {
   items: string[];
 };
 
+type Recommendation = {
+  name: string;
+  href: string;
+  tagline: string;
+  why: string;
+  perk?: string;
+};
+
+const recommendations: Recommendation[] = [
+  {
+    name: "Proton",
+    href: "https://pr.tn/ref/J9V01ZFX",
+    tagline: "Correo, VPN, Drive y Pass cifrados end-to-end, con sede en Suiza.",
+    why: "Lo uso a diario para separar identidades y mantener el correo fuera del circuito publicitario. Alternativa real a Google/Microsoft con cumplimiento RGPD nativo y código abierto en los clientes.",
+    perk: "Con este enlace obtienes un mes gratis en planes de pago.",
+  },
+  {
+    name: "Hostinger",
+    href: "https://www.hostinger.com/es?REFERRALCODE=G9PALEJANGEG",
+    tagline: "Hosting, dominios y VPS económicos con panel propio y soporte 24/7.",
+    why: "Lo recomiendo para proyectos que necesitan un VPS barato, un WordPress sin fricción o registrar un dominio rápido. Relación precio/rendimiento difícil de igualar para empezar.",
+    perk: "Con este enlace accedes a un 20% de descuento adicional en la primera contratación.",
+  },
+];
+
 const stack: Section[] = [
   {
     category: "Framework & Runtime",
@@ -121,6 +146,51 @@ export default function HerramientasPage() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="section-below-fold space-y-6">
+        <Separator />
+        <div className="space-y-3">
+          <h2 id="recomendaciones" className="title scroll-mt-24">
+            Recomendaciones
+          </h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Servicios que uso o recomiendo y que además tienen programa de referidos. Los enlaces
+            marcados llevan mi código: si contratas, la compañía me acredita una comisión sin coste
+            extra para ti. Solo aparecen aquí si los usaría igualmente sin el programa.
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          {recommendations.map((rec) => (
+            <div key={rec.name} className="space-y-2">
+              <h3 className="text-lg font-medium">
+                <a
+                  href={rec.href}
+                  target="_blank"
+                  rel="sponsored nofollow noopener noreferrer"
+                  className="underline underline-offset-4 decoration-primary/60"
+                >
+                  {rec.name}
+                </a>
+                <span className="text-muted-foreground text-xs font-normal ml-2">
+                  (enlace de afiliado)
+                </span>
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">{rec.tagline}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                <span className="text-foreground font-medium">Por qué: </span>
+                {rec.why}
+              </p>
+              {rec.perk ? (
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  <span className="text-foreground font-medium">Ventaja con el enlace: </span>
+                  {rec.perk}
+                </p>
+              ) : null}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

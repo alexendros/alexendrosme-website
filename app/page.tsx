@@ -43,10 +43,10 @@ export default function Home() {
         </p>
         <div className="flex flex-wrap gap-3">
           <Button asChild>
-            <Link href="/contact">Hablemos</Link>
+            <Link href="/contacto">Hablemos</Link>
           </Button>
           <Button variant="outline" asChild>
-            <Link href="/projects">Ver proyectos</Link>
+            <Link href="/proyectos">Ver proyectos</Link>
           </Button>
         </div>
       </section>
@@ -56,7 +56,7 @@ export default function Home() {
       {/* About brief */}
       <section className="site-shell section section-below-fold">
         <div className="max-w-3xl">
-          <h2 className="headline mb-4">Sobre mí</h2>
+          <h2 className="headline mb-4">Autobiografía</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Dev fullstack y fundador de <strong className="text-foreground">KitOS</strong>, una
@@ -67,10 +67,10 @@ export default function Home() {
             <p>
               Llegué al software por una ruta poco ortodoxa —la contaré con calma en{" "}
               <Link
-                href="/about"
+                href="/autobiografia"
                 className="text-primary underline underline-offset-4 decoration-primary/60 hover:decoration-primary"
               >
-                Sobre mí
+                Autobiografía
               </Link>
               —. Lo que me traje del camino: obsesión por los detalles que importan, criterio de
               negocio desde el primer commit y cero tolerancia al humo técnico.
@@ -91,7 +91,7 @@ export default function Home() {
           </div>
           <div className="mt-6">
             <Button variant="link" asChild className="px-0">
-              <Link href="/about">Leer más →</Link>
+              <Link href="/autobiografia">Leer más →</Link>
             </Button>
           </div>
         </div>
@@ -146,7 +146,7 @@ export default function Home() {
           </div>
           <div className="mt-6">
             <Button variant="link" asChild className="px-0">
-              <Link href="/projects">Ver todos los proyectos →</Link>
+              <Link href="/proyectos">Ver todos los proyectos →</Link>
             </Button>
           </div>
         </div>
@@ -162,10 +162,10 @@ export default function Home() {
             <p className="prose-lead mb-10 md:mb-14">
               Las piezas con las que construyo. Ver el detalle y el porqué en{" "}
               <Link
-                href="/herramientas"
+                href="/experiencia"
                 className="text-primary underline underline-offset-4 decoration-primary/60 hover:decoration-primary"
               >
-                Herramientas
+                Experiencia
               </Link>
               .
             </p>

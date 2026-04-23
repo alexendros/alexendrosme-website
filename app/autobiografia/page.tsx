@@ -2,30 +2,36 @@ import type { Metadata } from "next";
 import { Separator } from "@/components/ui/separator";
 
 export const metadata: Metadata = {
-  title: "Sobre mí",
-  description: "Fullstack developer. Fundador de KitOS. Valencia.",
+  title: "Autobiografía",
+  description:
+    "Relato personal en tres actos: origen, transición al software y actualidad como fundador. Propuesta de valor y diferenciación.",
+  alternates: { canonical: "/autobiografia" },
 };
 
-export default function AboutPage() {
+export default function AutobiografiaPage() {
   return (
     <div className="site-shell max-w-3xl section space-y-12">
-      <h1 className="headline">Sobre mí</h1>
+      <header className="space-y-3">
+        <h1 className="headline">Autobiografía</h1>
+        <p className="prose-lead">
+          Itinerario no lineal contado en tres actos. Contexto honesto sobre de dónde vengo, qué
+          aprendí por el camino y qué construyo ahora.
+        </p>
+      </header>
 
-      {/* Acto I */}
       <section className="space-y-4">
         <h2 className="title">Acto I — Origen</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Itinerario no lineal. Años fuera del software —hostelería, gestión, atención al cliente—
-          que me enseñaron a leer negocios antes que a escribir código. Traje de ahí tres cosas:
-          criterio para distinguir lo que importa del ruido, paciencia para los detalles que nadie
-          ve, y la costumbre de cobrar por resultados. Cuando por fin me senté a programar, ya tenía
-          claro para qué.
+          Años fuera del software —hostelería, gestión, atención al cliente— que me enseñaron a
+          leer negocios antes que a escribir código. Traje de ahí tres cosas: criterio para
+          distinguir lo que importa del ruido, paciencia para los detalles que nadie ve, y la
+          costumbre de cobrar por resultados. Cuando por fin me senté a programar, ya tenía claro
+          para qué.
         </p>
       </section>
 
       <Separator />
 
-      {/* Acto II */}
       <section className="space-y-4">
         <h2 className="title">Acto II — Transición</h2>
         <p className="text-muted-foreground leading-relaxed">
@@ -37,7 +43,6 @@ export default function AboutPage() {
 
       <Separator />
 
-      {/* Acto III */}
       <section className="space-y-4">
         <h2 className="title">Acto III — Actualidad</h2>
         <p className="text-muted-foreground leading-relaxed">
@@ -57,7 +62,6 @@ export default function AboutPage() {
 
       <Separator />
 
-      {/* UVP */}
       <section className="space-y-6">
         <h2 className="title">Propuesta de valor</h2>
         <blockquote className="border-l-2 border-primary pl-4">
@@ -67,7 +71,6 @@ export default function AboutPage() {
           </p>
         </blockquote>
 
-        {/* Diferenciación — tabla en desktop, lista stack en móvil */}
         <table className="legal-table">
           <thead>
             <tr>

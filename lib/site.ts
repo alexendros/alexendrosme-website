@@ -15,10 +15,11 @@ export const siteConfig = {
   },
   nav: [
     { label: "Inicio", href: "/" },
-    { label: "Sobre mí", href: "/about" },
-    { label: "Proyectos", href: "/projects" },
-    { label: "Herramientas", href: "/herramientas" },
-    { label: "Contacto", href: "/contact" },
+    { label: "Bitácora", href: "/bitacora" },
+    { label: "Proyectos", href: "/proyectos" },
+    { label: "Autobiografía", href: "/autobiografia" },
+    { label: "Experiencia", href: "/experiencia" },
+    { label: "Contacto", href: "/contacto" },
   ],
   legalNav: [
     { label: "Aviso legal", href: "/legal/aviso-legal" },

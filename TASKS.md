@@ -6,13 +6,13 @@ Lista viva de pendientes del repositorio standalone `alexendros-me`.
 
 ## 1. Infraestructura git ✅ (2026-04-12)
 
-- [x] Repo creado: `github.com/alexendros/alexendrosme-website`.
+- [x] Repo creado: `github.com/Alexendros/PersonaWeb`.
 - [x] `main` pusheado, PR de audit mergeado.
 - [ ] Proteger `main` en GitHub (require PR + 1 review).
 
 ## 2. Deploy Vercel ✅ (2026-04-12)
 
-- [x] Proyecto `alexendrosme-website` importado (team `alexendros`).
+- [x] Proyecto `PersonaWeb` importado (team `alexendros`).
 - [x] Next.js preset, `pnpm build`, **Output Directory vacío** (Vercel detecta `output: "export"`).
 - [x] Sin variables de entorno.
 - [x] Build verde, 11 páginas, first deploy OK.

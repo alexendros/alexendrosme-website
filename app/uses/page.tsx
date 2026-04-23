@@ -3,9 +3,9 @@ import Link from "next/link";
 import { UsesRedirect } from "./redirect-client";
 
 export const metadata: Metadata = {
-  title: "Herramientas",
-  description: "Esta página se mudó a /herramientas.",
-  alternates: { canonical: "/herramientas" },
+  title: "Experiencia",
+  description: "Esta página se mudó a /experiencia.",
+  alternates: { canonical: "/experiencia" },
   robots: { index: false, follow: true },
 };
 
@@ -18,10 +18,10 @@ export default function UsesRedirectPage() {
         <p className="text-muted-foreground">
           Ahora está en{" "}
           <Link
-            href="/herramientas"
+            href="/experiencia"
             className="text-primary underline underline-offset-4 decoration-primary/60"
           >
-            /herramientas
+            /experiencia
           </Link>
           .
         </p>

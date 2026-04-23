@@ -5,6 +5,7 @@ import { Separator } from "@/components/ui/separator";
 export const metadata: Metadata = {
   title: "Contacto",
   description: "Contacta con Alejandro Agustí. Email, GitHub, LinkedIn.",
+  alternates: { canonical: "/contacto" },
 };
 
 const socials = [
@@ -25,7 +26,7 @@ const socials = [
   },
 ];
 
-export default function ContactPage() {
+export default function ContactoPage() {
   return (
     <div className="site-shell max-w-3xl section space-y-10">
       <div className="space-y-3">

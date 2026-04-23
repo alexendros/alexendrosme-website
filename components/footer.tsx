@@ -81,7 +81,7 @@ export function Footer() {
         <p className="mt-2 text-xs text-muted-foreground">
           Esta web incluye enlaces de afiliado (ver{" "}
           <Link
-            href="/herramientas#recomendaciones"
+            href="/experiencia#recomendaciones"
             className="underline underline-offset-4 decoration-primary/60"
           >
             Recomendaciones

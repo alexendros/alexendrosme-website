@@ -31,7 +31,7 @@ export function Nav() {
         {/* Logo */}
         <Link
           href="/"
-          className="inline-flex min-h-[var(--tap-target-min)] items-center font-sans text-lg font-bold tracking-tight text-primary hover:opacity-80 transition-opacity"
+          className="inline-flex min-h-[var(--tap-target-min)] items-center font-sans text-lg font-bold tracking-tight text-primary [transition:color_var(--duration-fast)_var(--ease-out-expo)] hover:text-foreground"
         >
           Alexendros
         </Link>
@@ -47,7 +47,7 @@ export function Nav() {
                   className={`site-nav__link px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     isActive
                       ? "site-nav__link--active bg-secondary text-foreground"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
                   }`}
                 >
                   {item.label}
@@ -82,7 +82,7 @@ export function Nav() {
                       className={`flex min-h-[var(--tap-target-min)] items-center px-3 py-3 rounded-md text-sm font-medium transition-colors ${
                         pathname === item.href
                           ? "bg-secondary text-foreground"
-                          : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
                       }`}
                     >
                       {item.label}

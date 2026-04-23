@@ -32,8 +32,9 @@ export function ParticleBg() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     const styles = getComputedStyle(document.documentElement);
-    const primary = styles.getPropertyValue("--primary").trim() || "oklch(0.72 0.22 142)";
-    const accent = styles.getPropertyValue("--accent").trim() || "oklch(0.65 0.18 55)";
+    // Fallbacks alineados a Patrón VAP gama Vergina (oro + ámbar profundo).
+    const primary = styles.getPropertyValue("--primary").trim() || "oklch(0.80 0.16 85)";
+    const accent = styles.getPropertyValue("--accent").trim() || "oklch(0.66 0.14 65)";
 
     let particles: Particle[] = [];
     let raf = 0;

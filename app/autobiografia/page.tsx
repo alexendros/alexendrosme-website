@@ -46,7 +46,7 @@ export default function AutobiografiaPage() {
       <section className="space-y-4">
         <h2 className="title">Acto III — Actualidad</h2>
         <p className="text-muted-foreground leading-relaxed">
-          Fundador en activo de KitOS (
+          Operador de la plataforma (
           <a
             href="https://alexendros.pro"
             className="text-primary underline underline-offset-4 decoration-primary/60 hover:decoration-primary"
@@ -55,7 +55,7 @@ export default function AutobiografiaPage() {
           >
             alexendros.pro
           </a>
-          ). Plataforma multi-Kit en producción, build in public documentado y disponibilidad para
+          ). Monorepo multi-app en construcción, build in public documentado y disponibilidad para
           consultoría en proyectos donde la mezcla producto + ejecución técnica marca la diferencia.
         </p>
       </section>

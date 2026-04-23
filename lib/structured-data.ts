@@ -7,7 +7,7 @@ export const personJsonLd = {
   alternateName: "Alexendros",
   url: "https://alexendros.me",
   jobTitle: "Fullstack Developer",
-  description: "Fullstack developer especializado en Next.js y Supabase. Fundador de KitOS.",
+  description: "Fullstack developer especializado en Next.js y Supabase. Plataforma propia en alexendros.pro.",
   knowsAbout: ["Next.js", "TypeScript", "Supabase", "Stripe", "RGPD"],
   address: {
     "@type": "PostalAddress",

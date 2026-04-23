@@ -92,8 +92,11 @@
   }
 
   .site-nav[data-scrolled="true"] {
-    box-shadow: 0 4px 24px -12px color-mix(in oklch, var(--background) 40%, transparent);
-    transition: box-shadow var(--duration-base) var(--ease-smooth);
+    border-bottom-color: var(--color-border-default);
+    background: color-mix(in oklch, var(--background) 88%, transparent);
+    transition:
+      border-color var(--duration-base) var(--ease-out-expo),
+      background-color var(--duration-base) var(--ease-out-expo);
   }
 
   /* ── Footer ────────────────────────────────────────────── */
@@ -159,10 +162,10 @@
     pointer-events: none;
     background: radial-gradient(
       ellipse at center,
-      color-mix(in oklch, var(--primary) 18%, transparent),
-      transparent 60%
+      color-mix(in oklch, var(--color-brand-primary) 20%, transparent),
+      transparent 65%
     );
-    filter: blur(40px);
+    filter: blur(48px);
   }
 
   .hero-signature {
@@ -179,7 +182,7 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
+    border-radius: var(--radius-full);
     border: 1px solid color-mix(in oklch, var(--primary) 30%, var(--border));
     font-family: var(--font-mono);
     font-size: var(--text-small);

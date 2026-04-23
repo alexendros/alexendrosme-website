@@ -21,8 +21,11 @@ type StackItem = {
   href: string;
 };
 
+/* Logos de terceros: para marcas monocromas en dark (Next.js, Vercel, Resend)
+   heredamos `currentColor` del contenedor → oklch(0.97 0.008 80) cálido Vergina
+   en lugar de blanco puro. Prisma usa su hex oficial via simple-icons. */
 const items: StackItem[] = [
-  { icon: siNextdotjs, label: "Next.js", color: "#ffffff", href: "https://nextjs.org" },
+  { icon: siNextdotjs, label: "Next.js", color: "currentColor", href: "https://nextjs.org" },
   {
     icon: siTypescript,
     label: "TypeScript",
@@ -35,7 +38,12 @@ const items: StackItem[] = [
     color: `#${siSupabase.hex}`,
     href: "https://supabase.com",
   },
-  { icon: siPrisma, label: "Prisma", color: "#8b9dff", href: "https://www.prisma.io" },
+  {
+    icon: siPrisma,
+    label: "Prisma",
+    color: `#${siPrisma.hex}`,
+    href: "https://www.prisma.io",
+  },
   { icon: siStripe, label: "Stripe", color: `#${siStripe.hex}`, href: "https://stripe.com" },
   {
     icon: siTailwindcss,
@@ -49,8 +57,8 @@ const items: StackItem[] = [
     color: `#${siTurborepo.hex}`,
     href: "https://turborepo.com",
   },
-  { icon: siVercel, label: "Vercel", color: "#ffffff", href: "https://vercel.com" },
-  { icon: siResend, label: "Resend", color: "#ffffff", href: "https://resend.com" },
+  { icon: siVercel, label: "Vercel", color: "currentColor", href: "https://vercel.com" },
+  { icon: siResend, label: "Resend", color: "currentColor", href: "https://resend.com" },
   { icon: siN8n, label: "n8n", color: `#${siN8n.hex}`, href: "https://n8n.io" },
 ];
 
@@ -84,7 +92,7 @@ function LogoRow({ ariaHidden = false }: { ariaHidden?: boolean }) {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group/logo flex shrink-0 flex-col items-center gap-2 rounded-md px-2 py-1 opacity-80 transition-opacity hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            className="group/logo flex shrink-0 flex-col items-center gap-2 rounded-md px-2 py-1 text-foreground [transition:color_var(--duration-fast)_var(--ease-out-expo)] focus-visible:outline-none focus-visible:[box-shadow:var(--ring-focus)]"
             style={{ color }}
             title={`${icon.title} — ${href}`}
             {...linkProps}

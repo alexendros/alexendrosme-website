@@ -1,50 +1,193 @@
-/* tokens.css — single source of truth for design tokens.
-   All colors, radii, fonts, shadows, easings, durations and WCAG targets
-   live here. Components must NEVER hardcode oklch/hex — reference var(--*). */
+/* tokens.css — Patrón VAP · gama Vergina (oro helénico sobre sepia-bronce).
+   Única fuente de verdad. Capa canónica (--color-*) + consumo semántico shadcn.
+   Dark-first, oklch exclusivo. Profundidad por luminosidad, no por sombra.
+   Ref: /var/home/soyalexendros/Apps/patron-vap/colors_and_type.css + color_modes.css */
 
 :root {
+  /* =====================================================================
+     1. BRAND — Oro Vergina
+     ===================================================================== */
+  --color-brand-primary: oklch(0.80 0.16 85); /* oro batido helénico */
+  --color-brand-primary-hc: oklch(0.80 0.16 85); /* HC = primary (9.85:1 AA en dark) */
+  --color-brand-primary-fg: oklch(0.12 0.014 50); /* tinta cálida sobre oro */
+  --color-brand-accent: oklch(0.66 0.14 65); /* ámbar profundo (sombra del oro) */
+  --color-brand-accent-fg: oklch(0.12 0.014 50);
+
+  /* =====================================================================
+     2. SURFACE — sepia-bronce, hue 50, +0.02 L por paso
+     Elevación = diferencia de luminosidad, NUNCA box-shadow.
+     ===================================================================== */
+  --color-surface-0: oklch(0.11 0.010 50); /* bronce-sombra, no negro */
+  --color-surface-50: oklch(0.13 0.011 50);
+  --color-surface-100: oklch(0.15 0.012 50); /* card base */
+  --color-surface-200: oklch(0.18 0.013 50);
+  --color-surface-300: oklch(0.21 0.014 50);
+  --color-surface-400: oklch(0.24 0.015 50);
+  --color-surface-500: oklch(0.27 0.016 50);
+  --color-surface-600: oklch(0.30 0.017 50);
+  --color-surface-700: oklch(0.33 0.018 50);
+  --color-surface-800: oklch(0.36 0.019 50);
+  --color-surface-900: oklch(0.40 0.020 50); /* elementos flotantes máx */
+
+  /* =====================================================================
+     3. TEXT — tinta cálida mínimamente tintada
+     ===================================================================== */
+  --color-text-primary: oklch(0.97 0.008 80);
+  --color-text-secondary: oklch(0.80 0.010 70);
+  --color-text-tertiary: oklch(0.64 0.012 60);
+  --color-text-disabled: oklch(0.46 0.012 55);
+  --color-text-inverse: oklch(0.12 0.014 50);
+
+  /* =====================================================================
+     4. BORDER — chroma bajo cálido, vive entre surface-200 y surface-700
+     ===================================================================== */
+  --color-border-subtle: oklch(0.18 0.013 50);
+  --color-border-default: oklch(0.24 0.015 50);
+  --color-border-strong: oklch(0.32 0.018 50);
+  --color-border-focus: var(--color-brand-primary);
+
+  /* =====================================================================
+     5. SEMANTIC STATES — armonizados con la base cálida
+     Success usa oliva (hue 130) — distinto del oro para no confundir
+     "acción de marca" con "éxito".
+     ===================================================================== */
+  --color-success-fg: oklch(0.78 0.16 130);
+  --color-success-bg: oklch(0.20 0.06 130);
+  --color-success-border: oklch(0.40 0.12 130);
+
+  --color-warning-fg: oklch(0.82 0.16 82);
+  --color-warning-bg: oklch(0.22 0.06 82);
+  --color-warning-border: oklch(0.42 0.12 82);
+
+  --color-error-fg: oklch(0.72 0.22 25);
+  --color-error-bg: oklch(0.22 0.07 25);
+  --color-error-border: oklch(0.42 0.16 25);
+
+  --color-info-fg: oklch(0.78 0.14 230);
+  --color-info-bg: oklch(0.20 0.05 230);
+  --color-info-border: oklch(0.40 0.10 230);
+
+  /* =====================================================================
+     6. MOTION — 5 durations + easings custom (nunca ease-in-out nativo)
+     ===================================================================== */
+  --duration-instant: 80ms;
+  --duration-fast: 120ms;
+  --duration-base: 180ms;
+  --duration-slow: 240ms;
+  --duration-slower: 400ms;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-quart: cubic-bezier(0.5, 0, 0.75, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: linear(
+    0, 0.009, 0.035 2.1%, 0.141, 0.292, 0.468, 0.653, 0.831, 0.945 38.7%, 0.987, 1.003, 1.008, 1.008,
+    1.004, 0.999, 0.994, 0.992, 0.996, 1
+  );
+
+  /* Alias legados apuntando a los canónicos — no romper components.css */
+  --ease-smooth: var(--ease-out-expo);
+
+  /* =====================================================================
+     7. RADII
+     ===================================================================== */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* Alias shadcn consume --radius */
   --radius: 0.5rem;
 
-  /* Colors (dark-first, oklch) */
-  --background: oklch(0.09 0.005 240);
-  --foreground: oklch(0.95 0.005 240);
-  --card: oklch(0.13 0.008 240);
-  --card-foreground: oklch(0.95 0.005 240);
-  --popover: oklch(0.13 0.008 240);
-  --popover-foreground: oklch(0.95 0.005 240);
-  --primary: oklch(0.72 0.22 142);
-  --primary-foreground: oklch(0.09 0.005 240);
-  --secondary: oklch(0.17 0.008 240);
-  --secondary-foreground: oklch(0.95 0.005 240);
-  --muted: oklch(0.17 0.008 240);
-  --muted-foreground: oklch(0.65 0.01 240);
-  --accent: oklch(0.65 0.18 55);
-  --accent-foreground: oklch(0.09 0.005 240);
-  --destructive: oklch(0.6 0.22 25);
-  --destructive-foreground: oklch(0.95 0.005 240);
-  --border: oklch(0.22 0.01 240);
-  --input: oklch(0.22 0.01 240);
-  --ring: oklch(0.72 0.22 142);
+  /* =====================================================================
+     8. SHADOWS — solo para overlays (Dialog, Popover, Toast, Tooltip).
+     Cards, inputs, nav items NUNCA llevan box-shadow.
+     ===================================================================== */
+  --shadow-overlay:
+    0 1px 2px 0 oklch(0 0 0 / 0.3),
+    0 12px 32px -8px oklch(0 0 0 / 0.5),
+    0 0 0 1px var(--color-border-default);
 
-  /* Shadows & glows (derived from brand colors) */
-  --shadow-glow-primary: 0 0 40px color-mix(in oklch, var(--primary) 25%, transparent);
-  --shadow-glow-accent: 0 0 40px color-mix(in oklch, var(--accent) 20%, transparent);
-  --ring-focus: 0 0 0 3px color-mix(in oklch, var(--ring) 60%, transparent);
+  --shadow-popover:
+    0 1px 2px 0 oklch(0 0 0 / 0.2),
+    0 8px 24px -6px oklch(0 0 0 / 0.4),
+    0 0 0 1px var(--color-border-default);
 
-  /* Motion */
-  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --duration-fast: 150ms;
-  --duration-base: 250ms;
-  --duration-slow: 400ms;
+  --shadow-toast:
+    0 1px 2px 0 oklch(0 0 0 / 0.25),
+    0 10px 28px -6px oklch(0 0 0 / 0.45),
+    0 0 0 1px var(--color-border-default);
 
-  /* Layout & a11y */
+  /* Inner highlight — cómo se comunica profundidad en cards (pixel superior) */
+  --shadow-inner-highlight: inset 0 1px 0 0 oklch(1 0 0 / 0.04);
+
+  /* Glow de marca — permitido detrás del CTA hero o badges destacados */
+  --shadow-glow-brand: 0 0 56px color-mix(in oklch, var(--color-brand-primary) 32%, transparent);
+
+  /* Focus ring VAP — 2px brand + 2px offset surface-0, vía box-shadow */
+  --ring-focus:
+    0 0 0 2px var(--color-surface-0),
+    0 0 0 4px var(--color-brand-primary);
+
+  /* =====================================================================
+     9. Z-INDEX semántico
+     ===================================================================== */
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-overlay: 1200;
+  --z-modal: 1300;
+  --z-popover: 1400;
+  --z-toast: 1500;
+  --z-tooltip: 1600;
+
+  /* =====================================================================
+     10. LAYOUT & A11Y
+     ===================================================================== */
   --tap-target-min: 2.75rem; /* 44px — WCAG 2.1 AA */
   --measure-prose: 65ch;
   --safe-inset-x: max(1rem, env(safe-area-inset-left));
+
+  color-scheme: dark;
 }
 
+/* ===========================================================================
+   CAPA DE CONSUMO SEMÁNTICO shadcn → apunta a tokens canónicos VAP.
+   Permite que components/ui/* y clases Tailwind (bg-card, text-foreground)
+   mantengan su API sin conocer los nombres internos.
+   =========================================================================== */
+:root {
+  --background: var(--color-surface-0);
+  --foreground: var(--color-text-primary);
+  --card: var(--color-surface-100);
+  --card-foreground: var(--color-text-primary);
+  --popover: var(--color-surface-200);
+  --popover-foreground: var(--color-text-primary);
+  --primary: var(--color-brand-primary);
+  --primary-foreground: var(--color-brand-primary-fg);
+  --secondary: var(--color-surface-300);
+  --secondary-foreground: var(--color-text-primary);
+  --muted: var(--color-surface-200);
+  --muted-foreground: var(--color-text-tertiary);
+  --accent: var(--color-brand-accent);
+  --accent-foreground: var(--color-brand-accent-fg);
+  --destructive: var(--color-error-fg);
+  --destructive-foreground: var(--color-text-primary);
+  --border: var(--color-border-default);
+  --input: var(--color-border-default);
+  --ring: var(--color-brand-primary);
+}
+
+/* ===========================================================================
+   @theme inline — expone tokens al generador de Tailwind v4.
+   Incluye tanto la nomenclatura canónica VAP (bg-surface-100, text-text-primary)
+   como la semántica shadcn (bg-card, text-foreground).
+   =========================================================================== */
 @theme inline {
+  /* Shadcn semántico */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -65,11 +208,13 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
+  /* Radii */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
+  /* Fonts — consumidos por next/font vía --font-geist-sans */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

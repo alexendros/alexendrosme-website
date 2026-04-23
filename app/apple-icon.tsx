@@ -13,12 +13,12 @@ export default function AppleIcon() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "#0a0a0b",
+        background: "#17130f",
         borderRadius: 40,
         fontFamily: "ui-monospace, SFMono-Regular, Menlo, monospace",
         fontWeight: 700,
         fontSize: 104,
-        color: "#25c26b",
+        color: "#d9b267",
         letterSpacing: "-0.02em",
       }}
     >

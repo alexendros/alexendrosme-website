@@ -3,7 +3,7 @@ export const siteConfig = {
   fullName: "Alejandro Domingo Agustí",
   title: "Alejandro Agustí — Fullstack Developer",
   description:
-    "Fullstack developer especializado en Next.js y Supabase. Fundador de KitOS. Valencia.",
+    "Fullstack developer especializado en Next.js y Supabase. Plataforma propia en alexendros.pro. Valencia.",
   url: "https://alexendros.me",
   email: "contacto@alexendros.me",
   location: "Valencia, España",

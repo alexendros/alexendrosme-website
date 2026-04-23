@@ -20,7 +20,7 @@ package_manager: pnpm@10+
 
 - **Sitio estatico puro** (`output: 'export'` en `next.config.ts`) — SIN backend, sin API routes, sin middleware, sin auth, sin base de datos.
 - **Proposito**: campo de pruebas de branding/UI. Valida la identidad visual antes de aplicarla a `alexendros.pro`.
-- **Redirige a**: `alexendros.pro` para productos, servicios y dashboards (KitOS).
+- **Redirige a**: `alexendros.pro` para productos, servicios y dashboards.
 - **Fase 3 completa + UX polish** (PRs #21/#22/#23 en 2026-04-14). **En producción en `alexendros.me`** (apex y www vía Vercel).
 
 ## 3. STACK

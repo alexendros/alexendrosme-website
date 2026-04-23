@@ -164,7 +164,7 @@ Cierre de la Fase 3: shell de layout, contenido + legales, SEO y headers. 11 pá
 
 ### Plan 02 — Páginas de contenido + legales (2026-04-09)
 
-- 4 páginas de contenido: `/about` (narrativa 3 actos), `/projects` (portfolio KitOS + alexendros.me), `/uses` (stack), `/contact` (mailto + socials, sin formulario).
+- 4 páginas de contenido: `/about` (narrativa 3 actos), `/projects` (portfolio alexendros.pro + alexendros.me), `/uses` (stack), `/contact` (mailto + socials, sin formulario).
 - 3 páginas legales con contenido real:
   - `/legal/aviso-legal` — LSSI-CE Art. 10, NIF 21002968N (riesgo T-03-03 aceptado: requerido por ley).
   - `/legal/privacidad` — RGPD Art. 13, 8 secciones, SCCs, periodos de retención.

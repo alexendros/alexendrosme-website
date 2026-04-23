@@ -33,11 +33,11 @@ type Recommendation = {
 
 const roles: Role[] = [
   {
-    title: "Fundador y desarrollador principal",
-    org: "KitOS · alexendros.pro",
+    title: "Fullstack developer & operador de plataforma",
+    org: "alexendros.pro",
     period: "2024 — actualidad",
     summary:
-      "Diseño y operación de plataforma SaaS multi-kit: arquitectura, producto, cumplimiento y cobro.",
+      "Diseño y operación de plataforma SaaS multi-app: arquitectura, producto, cumplimiento y cobro.",
   },
 ];
 

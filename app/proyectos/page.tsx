@@ -52,11 +52,11 @@ const categories: { key: Category; label: string; blurb: string }[] = [
 
 const projects: Project[] = [
   {
-    title: "KitOS",
+    title: "alexendros.pro",
     description:
-      "Plataforma SaaS de kits digitales verticalizados. Cada Kit es un producto independiente dirigido a un sector específico, construido sobre infraestructura compartida: auth, pagos, email, analytics.",
+      "Plataforma SaaS multi-app verticalizada. Cada app es un producto independiente dirigido a un sector específico, construido sobre infraestructura compartida: auth, pagos, email, analytics.",
     category: "aplicacion",
-    status: "En producción",
+    status: "En construcción",
     statusVariant: "default",
     year: "2024",
     stack: ["Next.js", "Supabase", "Prisma", "Stripe", "Turborepo", "Vercel"],
@@ -152,8 +152,8 @@ export default function ProyectosPage() {
         <h2 className="title">En roadmap</h2>
         <p className="text-muted-foreground leading-relaxed">
           <strong>StageKit</strong> (producción musical electrónica), <strong>LexKit</strong>{" "}
-          (despachos jurídicos) y <strong>GestKit</strong> (gestorías) caminando en el roadmap de
-          KitOS. Público cuando haya algo operativo, no antes.
+          (despachos jurídicos) y <strong>GestKit</strong> (gestorías) caminando en el roadmap del
+          monorepo. Público cuando haya algo operativo, no antes.
         </p>
       </section>
     </div>

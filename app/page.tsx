@@ -19,7 +19,7 @@ export default function Home() {
       {/* Hero — visible without scroll, answers: quien, que, para quien */}
       <section className="site-shell hero-section">
         <div className="flex flex-wrap items-center gap-3">
-          <p className="hero-eyebrow">Valencia · Fullstack · KitOS</p>
+          <p className="hero-eyebrow">Valencia · Fullstack · alexendros.pro</p>
           <span className="availability-pill">
             <span className="availability-pill__dot" aria-hidden="true" />
             Disponible
@@ -29,14 +29,14 @@ export default function Home() {
           Construyo software útil donde suele llegar caro, tarde o roto.
         </h1>
         <p className="prose-lead">
-          Fullstack developer. Fundador de{" "}
+          Fullstack developer. Plataforma propia en{" "}
           <a
             href="https://alexendros.pro"
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-4 decoration-primary/60 hover:decoration-primary"
           >
-            KitOS
+            alexendros.pro
           </a>
           . Valencia.
         </p>
@@ -58,9 +58,9 @@ export default function Home() {
           <h2 className="headline mb-4">Autobiografía</h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              Dev fullstack y fundador de <strong className="text-foreground">KitOS</strong>, una
-              plataforma SaaS de kits digitales pensados sector a sector. Lo construyo con Next.js,
-              Supabase y Stripe, apretando donde se nota: rendimiento real (LCP &lt; 2s), conversión
+              Dev fullstack que construye productos digitales verticalizados en{" "}
+              <strong className="text-foreground">alexendros.pro</strong>. Stack: Next.js, Supabase
+              y Stripe, apretando donde se nota: rendimiento real (LCP &lt; 2s), conversión
               y cumplimiento legal (RGPD/LOPDGDD) sin letra pequeña.
             </p>
             <p>
@@ -75,7 +75,7 @@ export default function Home() {
               negocio desde el primer commit y cero tolerancia al humo técnico.
             </p>
             <p>
-              Ahora mismo: <strong className="text-foreground">KitOS</strong> en producción en{" "}
+              Ahora mismo: plataforma en construcción en{" "}
               <a
                 href="https://alexendros.pro"
                 target="_blank"
@@ -84,8 +84,7 @@ export default function Home() {
               >
                 alexendros.pro
               </a>
-              . StageKit (música electrónica), LexKit (despachos) y GestKit (gestorías) caminando en
-              el roadmap.
+              . StageKit (música electrónica) en MVP, más verticales en el roadmap.
             </p>
           </div>
           <div className="mt-6">
@@ -106,12 +105,11 @@ export default function Home() {
             <Card>
               <CardHeader>
                 <div className="flex items-start justify-between gap-2">
-                  <CardTitle className="text-lg">KitOS</CardTitle>
-                  <Badge className="shrink-0">En producción</Badge>
+                  <CardTitle className="text-lg">alexendros.pro</CardTitle>
+                  <Badge className="shrink-0">En construcción</Badge>
                 </div>
                 <CardDescription>
-                  Plataforma SaaS de kits digitales verticalizados. Next.js + Supabase + Stripe +
-                  Turborepo.
+                  Monorepo con apps verticales sobre Next.js + Supabase + Stripe + Turborepo.
                 </CardDescription>
               </CardHeader>
               <CardContent>

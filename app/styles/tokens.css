@@ -1,53 +1,93 @@
-/* tokens.css — Patrón VAP · gama Vergina (oro helénico sobre sepia-bronce).
-   Única fuente de verdad. Capa canónica (--color-*) + consumo semántico shadcn.
-   Dark-first, oklch exclusivo. Profundidad por luminosidad, no por sombra.
-   Ref: /var/home/soyalexendros/Apps/patron-vap/colors_and_type.css + color_modes.css */
+/* tokens.css — Vergina Imperial v0.2.0 · acento oro Vergina (default)
+   Manual de Diseño: github.com/Alexendros/design-system_vergina-imperial
+   Sucesor de Patrón VAP gama Vergina (legacy). Atmósfera púrpura pretoriana
+   (hue 315) unificada + acento metálico oro (hue 85). Dark-first. oklch
+   exclusivo. Profundidad por luminosidad, NO por sombra.
+
+   Activación: data-mode="dark" + data-accent="gold" en <html> (defaults
+   ambos; el className "dark" se mantiene por compat con shadcn). */
 
 :root {
   /* =====================================================================
-     1. BRAND — Oro Vergina
-     ===================================================================== */
-  --color-brand-primary: oklch(0.80 0.16 85); /* oro batido helénico */
-  --color-brand-primary-hc: oklch(0.80 0.16 85); /* HC = primary (9.85:1 AA en dark) */
-  --color-brand-primary-fg: oklch(0.12 0.014 50); /* tinta cálida sobre oro */
-  --color-brand-accent: oklch(0.66 0.14 65); /* ámbar profundo (sombra del oro) */
-  --color-brand-accent-fg: oklch(0.12 0.014 50);
-
-  /* =====================================================================
-     2. SURFACE — sepia-bronce, hue 50, +0.02 L por paso
+     1. ATMÓSFERA — púrpura pretoriana hue 315, +0.02 L por paso.
      Elevación = diferencia de luminosidad, NUNCA box-shadow.
      ===================================================================== */
-  --color-surface-0: oklch(0.11 0.010 50); /* bronce-sombra, no negro */
-  --color-surface-50: oklch(0.13 0.011 50);
-  --color-surface-100: oklch(0.15 0.012 50); /* card base */
-  --color-surface-200: oklch(0.18 0.013 50);
-  --color-surface-300: oklch(0.21 0.014 50);
-  --color-surface-400: oklch(0.24 0.015 50);
-  --color-surface-500: oklch(0.27 0.016 50);
-  --color-surface-600: oklch(0.30 0.017 50);
-  --color-surface-700: oklch(0.33 0.018 50);
-  --color-surface-800: oklch(0.36 0.019 50);
-  --color-surface-900: oklch(0.40 0.020 50); /* elementos flotantes máx */
+  --color-surface-0: oklch(0.10 0.014 315); /* noche profunda púrpura */
+  --color-surface-50: oklch(0.12 0.016 315);
+  --color-surface-100: oklch(0.14 0.018 315); /* card base */
+  --color-surface-200: oklch(0.17 0.020 315);
+  --color-surface-300: oklch(0.20 0.022 315); /* border subtle */
+  --color-surface-400: oklch(0.23 0.024 315);
+  --color-surface-500: oklch(0.26 0.026 315); /* border default */
+  --color-surface-600: oklch(0.29 0.028 315);
+  --color-surface-700: oklch(0.33 0.030 315); /* border strong */
+  --color-surface-800: oklch(0.37 0.032 315);
+  --color-surface-900: oklch(0.42 0.034 315); /* elementos flotantes máx */
+
+  /* Atmósfera radial (focos PurpleAtmosphere) — opcional para hero/landing */
+  --atmosphere-haze: oklch(0.32 0.090 318);
+  --atmosphere-velvet: oklch(0.18 0.060 315);
+  --atmosphere-vignette: oklch(0.04 0.020 315);
 
   /* =====================================================================
-     3. TEXT — tinta cálida mínimamente tintada
+     2. ACENTO — Oro Vergina (default, hue 85, cálido)
+     "Memoria, valor, firma, declaración." alexendros.me es lente identitaria.
      ===================================================================== */
-  --color-text-primary: oklch(0.97 0.008 80);
-  --color-text-secondary: oklch(0.80 0.010 70);
-  --color-text-tertiary: oklch(0.64 0.012 60);
-  --color-text-disabled: oklch(0.46 0.012 55);
-  --color-text-inverse: oklch(0.12 0.014 50);
+  --accent: oklch(0.78 0.165 85); /* oro batido helénico */
+  --accent-dim: oklch(0.62 0.130 85); /* oro grave */
+  --accent-bright: oklch(0.92 0.100 88); /* brillo alto */
+  --accent-fg: oklch(0.12 0.014 50); /* tinta cálida sobre oro */
+
+  /* Shimmer vertical — texto metalizado (cifras, números de sección) */
+  --accent-shimmer: linear-gradient(
+    180deg,
+    oklch(0.92 0.10 88) 0%,
+    oklch(0.82 0.165 85) 38%,
+    oklch(0.62 0.13 85) 70%,
+    oklch(0.78 0.155 85) 100%
+  );
+
+  /* Alias de marca para componentes que lean tokens "brand" */
+  --color-brand-primary: var(--accent);
+  --color-brand-primary-hc: var(--accent); /* AA sobre surface-0: 9.85:1 */
+  --color-brand-primary-fg: var(--accent-fg);
+  --color-brand-accent: var(--accent-dim);
+  --color-brand-accent-fg: var(--accent-fg);
 
   /* =====================================================================
-     4. BORDER — chroma bajo cálido, vive entre surface-200 y surface-700
+     3. TEXT — neutro tintado púrpura mínimo
      ===================================================================== */
-  --color-border-subtle: oklch(0.18 0.013 50);
-  --color-border-default: oklch(0.24 0.015 50);
-  --color-border-strong: oklch(0.32 0.018 50);
-  --color-border-focus: var(--color-brand-primary);
+  --color-text-primary: oklch(0.97 0.008 310);
+  --color-text-secondary: oklch(0.80 0.010 310);
+  --color-text-tertiary: oklch(0.62 0.012 310);
+  --color-text-disabled: oklch(0.46 0.014 310);
+  --color-text-inverse: oklch(0.07 0.012 315);
 
   /* =====================================================================
-     5. SEMANTIC STATES — armonizados con la base cálida
+     4. BORDER — alineados con la escala surface
+     ===================================================================== */
+  --color-border-subtle: var(--color-surface-300);
+  --color-border-default: var(--color-surface-500);
+  --color-border-strong: var(--color-surface-700);
+  --color-border-focus: var(--accent);
+
+  /* =====================================================================
+     5. GLASS primitive — paneles translúcidos sobre la atmósfera
+     ===================================================================== */
+  --glass-bg: linear-gradient(
+    140deg,
+    oklch(1 0 0 / 0.06) 0%,
+    oklch(1 0 0 / 0.02) 50%,
+    oklch(1 0 0 / 0.04) 100%
+  );
+  --glass-border: oklch(1 0 0 / 0.08);
+  --glass-blur: blur(20px) saturate(140%);
+  --glass-shadow:
+    inset 0 1px 0 oklch(1 0 0 / 0.10),
+    0 30px 80px -20px oklch(0 0 0 / 0.55);
+
+  /* =====================================================================
+     6. SEMANTIC STATES — armonizados con la base púrpura
      Success usa oliva (hue 130) — distinto del oro para no confundir
      "acción de marca" con "éxito".
      ===================================================================== */
@@ -68,7 +108,7 @@
   --color-info-border: oklch(0.40 0.10 230);
 
   /* =====================================================================
-     6. MOTION — 5 durations + easings custom (nunca ease-in-out nativo)
+     7. MOTION — 5 durations + easings custom (nunca ease-in-out nativo)
      ===================================================================== */
   --duration-instant: 80ms;
   --duration-fast: 120ms;
@@ -89,7 +129,7 @@
   --ease-smooth: var(--ease-out-expo);
 
   /* =====================================================================
-     7. RADII
+     8. RADII
      ===================================================================== */
   --radius-xs: 4px;
   --radius-sm: 6px;
@@ -103,7 +143,7 @@
   --radius: 0.5rem;
 
   /* =====================================================================
-     8. SHADOWS — solo para overlays (Dialog, Popover, Toast, Tooltip).
+     9. SHADOWS — solo para overlays (Dialog, Popover, Toast, Tooltip).
      Cards, inputs, nav items NUNCA llevan box-shadow.
      ===================================================================== */
   --shadow-overlay:
@@ -125,15 +165,16 @@
   --shadow-inner-highlight: inset 0 1px 0 0 oklch(1 0 0 / 0.04);
 
   /* Glow de marca — permitido detrás del CTA hero o badges destacados */
-  --shadow-glow-brand: 0 0 56px color-mix(in oklch, var(--color-brand-primary) 32%, transparent);
+  --shadow-glow-brand: 0 0 56px color-mix(in oklch, var(--accent) 32%, transparent);
+  --shadow-glow-accent: var(--shadow-glow-brand);
 
-  /* Focus ring VAP — 2px brand + 2px offset surface-0, vía box-shadow */
+  /* Focus ring 2px brand + 2px offset surface-0, vía box-shadow */
   --ring-focus:
     0 0 0 2px var(--color-surface-0),
-    0 0 0 4px var(--color-brand-primary);
+    0 0 0 4px var(--accent);
 
   /* =====================================================================
-     9. Z-INDEX semántico
+     10. Z-INDEX semántico
      ===================================================================== */
   --z-base: 0;
   --z-dropdown: 1000;
@@ -145,7 +186,7 @@
   --z-tooltip: 1600;
 
   /* =====================================================================
-     10. LAYOUT & A11Y
+     11. LAYOUT & A11Y
      ===================================================================== */
   --tap-target-min: 2.75rem; /* 44px — WCAG 2.1 AA */
   --measure-prose: 65ch;
@@ -155,7 +196,7 @@
 }
 
 /* ===========================================================================
-   CAPA DE CONSUMO SEMÁNTICO shadcn → apunta a tokens canónicos VAP.
+   CAPA DE CONSUMO SEMÁNTICO shadcn → apunta a tokens canónicos Vergina Imperial.
    Permite que components/ui/* y clases Tailwind (bg-card, text-foreground)
    mantengan su API sin conocer los nombres internos.
    =========================================================================== */
@@ -172,7 +213,7 @@
   --secondary-foreground: var(--color-text-primary);
   --muted: var(--color-surface-200);
   --muted-foreground: var(--color-text-tertiary);
-  --accent: var(--color-brand-accent);
+  --accent-shadcn: var(--color-brand-accent);
   --accent-foreground: var(--color-brand-accent-fg);
   --destructive: var(--color-error-fg);
   --destructive-foreground: var(--color-text-primary);
@@ -183,8 +224,8 @@
 
 /* ===========================================================================
    @theme inline — expone tokens al generador de Tailwind v4.
-   Incluye tanto la nomenclatura canónica VAP (bg-surface-100, text-text-primary)
-   como la semántica shadcn (bg-card, text-foreground).
+   Incluye tanto la nomenclatura canónica Vergina Imperial (bg-surface-100,
+   text-text-primary) como la semántica shadcn (bg-card, text-foreground).
    =========================================================================== */
 @theme inline {
   /* Shadcn semántico */
@@ -200,7 +241,7 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
+  --color-accent: var(--accent-shadcn);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);

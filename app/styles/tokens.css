@@ -255,13 +255,14 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Fonts — consumidos por next/font vía --font-geist-sans + --font-display (Outfit) */
+  /* Fonts — consumidos por next/font vía --font-geist-sans + --font-display (Inter v0.2.2) */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-display, "Outfit"), var(--font-geist-sans), sans-serif;
+  --font-display: var(--font-display, "Inter"), var(--font-geist-sans), sans-serif;
 }
 
-/* H1 hero · doctrina Vergina Imperial v0.2.1 · degradado vertical color→transparente */
+/* H1 hero · doctrina Vergina Imperial v0.2.2 · fade vertical color→semi-transparente.
+   Sólido hasta 55%, transición al 80%, baseline 35% al 100% — NUNCA fade total. */
 h1.display, .hero h1 {
   font-family: var(--font-display);
   font-weight: 700;
@@ -270,9 +271,9 @@ h1.display, .hero h1 {
   text-wrap: balance;
   background: linear-gradient(180deg,
     var(--color-text-primary) 0%,
-    var(--color-text-primary) 35%,
-    color-mix(in oklch, var(--color-text-primary) 60%, transparent) 70%,
-    transparent 100%);
+    var(--color-text-primary) 55%,
+    color-mix(in oklch, var(--color-text-primary) 78%, transparent) 80%,
+    color-mix(in oklch, var(--color-text-primary) 35%, transparent) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

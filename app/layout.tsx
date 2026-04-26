@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Nav } from "@/components/nav";
@@ -16,6 +17,15 @@ const geistSans = localFont({
 const geistMono = localFont({
   src: "../public/fonts/GeistMonoVF.woff2",
   variable: "--font-geist-mono",
+  display: "swap",
+});
+
+// Vergina Imperial v0.2.1 · Outfit weight 700/800 para hero h1.display.
+// Geist sigue como sans body (doctrina alexendros.me CLAUDE.md §3).
+const outfitDisplay = Outfit({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["700", "800"],
   display: "swap",
 });
 
@@ -63,7 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="es"
       data-mode="dark"
       data-accent="gold"
-      className={`dark ${geistSans.variable} ${geistMono.variable}`}
+      className={`dark ${geistSans.variable} ${geistMono.variable} ${outfitDisplay.variable}`}
     >
       <body className="flex min-h-screen flex-col">
         <a href="#main" className="skip-link">

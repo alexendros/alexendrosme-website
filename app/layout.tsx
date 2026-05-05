@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Nav } from "@/components/nav";
@@ -16,6 +17,17 @@ const geistSans = localFont({
 const geistMono = localFont({
   src: "../public/fonts/GeistMonoVF.woff2",
   variable: "--font-geist-mono",
+  display: "swap",
+});
+
+// Vergina Imperial v0.2.2 · Inter weight 700/800 para hero h1.display.
+// Inter aprobado en otro hilo como reemplazo definitivo de la familia
+// neogrotesque (Outfit/Bricolage/Manrope descatalogados). Geist sigue
+// como sans body (doctrina alexendros.me CLAUDE.md §3).
+const interDisplay = Inter({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["700", "800", "900"],
   display: "swap",
 });
 
@@ -59,7 +71,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`dark ${geistSans.variable} ${geistMono.variable}`}>
+    <html
+      lang="es"
+      data-mode="dark"
+      data-accent="gold"
+      className={`dark ${geistSans.variable} ${geistMono.variable} ${interDisplay.variable}`}
+    >
       <body className="flex min-h-screen flex-col">
         <a href="#main" className="skip-link">
           Saltar al contenido
